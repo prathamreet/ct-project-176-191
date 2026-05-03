@@ -1,0 +1,9 @@
+{
+  "name": "taskflow-worker",
+  "version": "1.0.0",
+  "main": "worker.js",
+  "dependencies": {
+    "redis": "^4.6.10",
+    "better-sqlite3": "^9.4.3"
+  }
+}
