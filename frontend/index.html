@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow | Docker Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-container">
+        <h1>TaskFlow</h1>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Enter task...">
+            <button onclick="addTask()">Queue Task</button>
+        </div>
+        <div id="taskList"></div>
+    </div>
+
+    <script>
+        async function addTask() {
+            const task = document.getElementById('taskInput').value;
+            await fetch('/api/task', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ task })
+            });
+            loadTasks();
+        }
+
+        async function loadTasks() {
+            const res = await fetch('/api/tasks');
+            const tasks = await res.json();
+            document.getElementById('taskList').innerHTML = tasks.map(t => `
+                <div class="task-item ${t.status}">
+                    <span>${t.id}: ${t.status}</span>
+                    <p>${t.result || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        setInterval(loadTasks, 2000);
+        loadTasks();
+    </script>
+</body>
+</html>
