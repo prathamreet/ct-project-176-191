@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  worker:
+    build: ./worker
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+
+  prometheus:
+    build:
+      context: .
+      dockerfile: ./monitoring/Prometheus.Dockerfile
+    ports:
+      - "9090:9090"
+
+  grafana:
+    build:
+      context: .
+      dockerfile: ./monitoring/Grafana.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
