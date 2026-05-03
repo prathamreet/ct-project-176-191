@@ -1,6 +1,5 @@
 <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=10&section=header" width="1080" align="center"/>
 <br>
-<br>
 
 # TaskFlow - Asynchronous Task Queue System
 
