@@ -1,3 +1,7 @@
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=10&section=header" width="1080" align="center"/>
+<br>
+<br>
+
 # PRD — TaskFlow (Dockerized Task Queue System)
 
 ## 1. Overview
@@ -157,3 +161,6 @@ Metrics:
 * Dockerfiles
 * CI/CD workflow
 * Basic documentation
+
+<br>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=10&section=header" width="1080" align="center"/>
