@@ -1,0 +1,40 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.glass-container {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+input {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 70%;
+}
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.task-item {
+    margin-top: 15px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.completed { color: #10b981; }
+.processing { color: #f59e0b; }
+.pending { color: #94a3b8; }
