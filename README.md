@@ -1,10 +1,10 @@
-# TaskFlow ◈ Asynchronous Task Queue System
+# TaskFlow - Asynchronous Task Queue System
 
 A clean, multi-container demonstration project showcasing asynchronous background processing, real-time monitoring, and zero-volume Docker orchestration.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 1.  **Clone the project** (if you haven't already).
 2.  **Launch the system**:
     ```bash
@@ -17,21 +17,20 @@ A clean, multi-container demonstration project showcasing asynchronous backgroun
 
 ---
 
-## 🏗️ Architecture & Services
-This project orchestrates **6 specialized services** working in harmony:
+## Architecture & Services
 
-| Service | Technology | Role |
-| :--- | :--- | :--- |
-| **Frontend** | Nginx | Serves the UI and proxies API requests. |
-| **Backend** | Node.js (Express) | Receives tasks, manages state in Redis, and exports metrics. |
-| **Worker** | Node.js | Background process that pulls tasks from Redis and executes them. |
-| **Queue/DB**| Redis | Acts as both the message broker and the ephemeral state store. |
-| **Metrics** | Prometheus | Automatically scrapes performance data from the backend. |
-| **Visualizer**| Grafana | Provides a real-time dashboard for task status and system health. |
+| Service        | Technology        | Role                                                              |
+| :------------- | :---------------- | :---------------------------------------------------------------- |
+| **Frontend**   | Nginx             | Serves the UI and proxies API requests.                           |
+| **Backend**    | Node.js (Express) | Receives tasks, manages state in Redis, and exports metrics.      |
+| **Worker**     | Node.js           | Background process that pulls tasks from Redis and executes them. |
+| **Queue/DB**   | Redis             | Acts as both the message broker and the ephemeral state store.    |
+| **Metrics**    | Prometheus        | Automatically scrapes performance data from the backend.          |
+| **Visualizer** | Grafana           | Provides a real-time dashboard for task status and system health. |
 
 ---
 
-## 🛠️ Key Technical Concepts
+## Key Technical Concepts
 *   **Zero-Volume Orchestration**: All configurations (Nginx, Prometheus, Grafana) are embedded directly into custom Docker images. No local file mounting is required.
 *   **Asynchronous Pattern**: Tasks are offloaded from the API to the Worker via a Redis queue to ensure the UI remains responsive.
 *   **Service Discovery**: Services communicate using internal Docker DNS names (e.g., `http://redis:6379`) instead of IP addresses.
@@ -39,7 +38,7 @@ This project orchestrates **6 specialized services** working in harmony:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```text
 ├── backend/      # API Server
 ├── worker/       # Background Worker
@@ -48,4 +47,4 @@ This project orchestrates **6 specialized services** working in harmony:
 └── docker-compose.yml
 ```
 
-Developed as part of the **ct-project**.
+Developed as part of the **Containerization Tool project**.
