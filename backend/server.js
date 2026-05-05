@@ -38,6 +38,16 @@ app.get('/task/:id', async (req, res) => {
     res.json(task.id ? task : { error: 'Not found' });
 });
 
+app.delete('/tasks', async (req, res) => {
+    const ids = await client.lRange('all_tasks', 0, -1);
+    for (const id of ids) {
+        await client.del(`task:${id}`);
+    }
+    await client.del('all_tasks');
+    await client.del('queue'); // Optional: clear queue too
+    res.json({ success: true });
+});
+
 app.get('/metrics', async (req, res) => {
     const ids = await client.lRange('all_tasks', 0, -1);
     let total = ids.length;
