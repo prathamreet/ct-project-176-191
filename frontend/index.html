@@ -2,22 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TaskFlow | Docker Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glass-container">
-        <h1>TaskFlow</h1>
-        <div class="input-group">
-            <input type="text" id="taskInput" placeholder="Enter task...">
-            <button onclick="addTask()">Queue Task</button>
+    <div class="app-shell">
+        <header>
+            <h1>TaskFlow</h1>
+            <div class="stats">
+                <div class="stat">Tasks <span id="statTotal">0</span></div>
+                <div class="stat">Done <span id="statDone">0</span></div>
+            </div>
+        </header>
+
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" id="taskInput" placeholder="New task..." autocomplete="off">
+                <button class="primary" onclick="addTask()">Add</button>
+            </div>
         </div>
-        <div id="taskList"></div>
+
+        <div class="task-list-container" id="taskList">
+            <div class="empty">No tasks yet</div>
+        </div>
+
+        <footer>
+            <button class="secondary" onclick="clearTasks()">Clear All</button>
+        </footer>
     </div>
 
     <script>
+        const adjectives = [
+            'swift', 'silent', 'bold', 'dark', 'bright', 'calm', 'wild', 'lone', 'mighty', 'vivid',
+            'stellar', 'cyber', 'quantum', 'spectral', 'shadow', 'ancient', 'hyper', 'frozen', 'rapid', 'brave',
+            'crimson', 'obsidian', 'atomic', 'cosmic', 'hidden', 'neon', 'digital', 'ethereal', 'infinite', 'sonic'
+        ];
+        const nouns = [
+            'wolf', 'falcon', 'nebula', 'storm', 'matrix', 'circuit', 'ghost', 'titan', 'pulse', 'void',
+            'comet', 'drift', 'blade', 'spark', 'echo', 'raptor', 'zenith', 'omega', 'core', 'nexus',
+            'orbit', 'stream', 'beacon', 'hawk', 'viper', 'nomad', 'engine', 'module', 'vertex', 'crown'
+        ];
+
+        function generateName() {
+            const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const noun = nouns[Math.floor(Math.random() * nouns.length)];
+            return `${adj}-${noun}`;
+        }
+
         async function addTask() {
-            const task = document.getElementById('taskInput').value;
+            const input = document.getElementById('taskInput');
+            let task = input.value.trim();
+            
+            // Use random name if input is empty, or combine?
+            // Let's make it so if input is empty, it uses the random name.
+            if (!task) {
+                task = generateName();
+            }
+            
+            input.value = '';
+            updatePlaceholder();
             await fetch('/api/task', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -26,19 +73,73 @@
             loadTasks();
         }
 
+        async function clearTasks() {
+            if (!confirm('Clear history?')) return;
+            await fetch('/api/tasks', { method: 'DELETE' });
+            loadTasks();
+        }
+
         async function loadTasks() {
-            const res = await fetch('/api/tasks');
-            const tasks = await res.json();
-            document.getElementById('taskList').innerHTML = tasks.map(t => `
-                <div class="task-item ${t.status}">
-                    <span>${t.id}: ${t.status}</span>
-                    <p>${t.result || ''}</p>
-                </div>
-            `).join('');
+            try {
+                const res = await fetch('/api/tasks');
+                const tasks = await res.json();
+                const container = document.getElementById('taskList');
+                
+                document.getElementById('statTotal').innerText = tasks.length;
+                document.getElementById('statDone').innerText = tasks.filter(t => t.status === 'completed').length;
+
+                if (tasks.length === 0) {
+                    container.innerHTML = '<div class="empty">No tasks yet</div>';
+                    return;
+                }
+
+                const sortedTasks = tasks.sort((a, b) => {
+                    if (a.status !== 'completed' && b.status === 'completed') return -1;
+                    if (a.status === 'completed' && b.status !== 'completed') return 1;
+                    return b.id.localeCompare(a.id);
+                });
+
+                container.innerHTML = sortedTasks.map(t => {
+                    let statusClass = '';
+                    let statusLabel = t.status;
+                    let loader = '';
+
+                    if (t.status === 'processing') {
+                        statusClass = 'status-processing';
+                        loader = '<span class="loader"></span>';
+                    } else if (t.status === 'completed') {
+                        statusClass = 'status-completed';
+                    }
+
+                    return `
+                        <div class="task-item">
+                            <div class="task-content">
+                                <span class="task-id">#${t.id}</span>
+                                <div class="task-text">${t.task}</div>
+                                ${t.result ? `<div class="task-result">${t.result}</div>` : ''}
+                            </div>
+                            <div class="status-pill ${statusClass}">
+                                ${loader}${statusLabel}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } catch (err) {
+                console.error(err);
+            }
         }
 
         setInterval(loadTasks, 2000);
         loadTasks();
+
+        function updatePlaceholder() {
+            document.getElementById('taskInput').placeholder = `New task (e.g. ${generateName()})...`;
+        }
+        updatePlaceholder();
+
+        document.getElementById('taskInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addTask();
+        });
     </script>
 </body>
 </html>
