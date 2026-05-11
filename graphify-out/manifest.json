@@ -1,0 +1,38 @@
+{
+  "E:\\repo-dev\\ctmp\\backend\\server.js": {
+    "mtime": 1777995244.2406685,
+    "hash": "50fa124ba9c55438babdaae3ad966199"
+  },
+  "E:\\repo-dev\\ctmp\\worker\\worker.js": {
+    "mtime": 1777826563.2396002,
+    "hash": "228cef560b2a2d878da6bc59e90935ce"
+  },
+  "E:\\repo-dev\\ctmp\\docker-compose.yml": {
+    "mtime": 1777826524.9505653,
+    "hash": "e3462c48dfe8133d63faed29f3728321"
+  },
+  "E:\\repo-dev\\ctmp\\README.md": {
+    "mtime": 1777828886.646567,
+    "hash": "98a6dd4dbdba688cc6d4464510d851f2"
+  },
+  "E:\\repo-dev\\ctmp\\docs\\feat.md": {
+    "mtime": 1778394357.2175186,
+    "hash": "cf3624ba30b3673007d7bb8fd6d09c8b"
+  },
+  "E:\\repo-dev\\ctmp\\docs\\prd.md": {
+    "mtime": 1777828833.9163477,
+    "hash": "11bde506eed16a2496a3719ebe3f3274"
+  },
+  "E:\\repo-dev\\ctmp\\frontend\\index.html": {
+    "mtime": 1777995244.2416863,
+    "hash": "9d459b5ad38a2b6270235d1c660e6ce6"
+  },
+  "E:\\repo-dev\\ctmp\\monitoring\\grafana-datasource.yml": {
+    "mtime": 1777819996.9187188,
+    "hash": "7bdd32324118fe4fe11e8f5920c9e7bc"
+  },
+  "E:\\repo-dev\\ctmp\\monitoring\\prometheus.yml": {
+    "mtime": 1777819991.741208,
+    "hash": "0c348a6b1e823a972b960cac6d21014b"
+  }
+}

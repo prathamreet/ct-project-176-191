@@ -1,0 +1,447 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "taskflow_system",
+        "label": "TaskFlow Core System",
+        "nodes": [
+          "dockercompose_frontend",
+          "dockercompose_backend",
+          "dockercompose_worker",
+          "dockercompose_redis"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "server.js",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L1",
+      "id": "backend_server_js",
+      "community": 0,
+      "norm_label": "server.js"
+    },
+    {
+      "label": "express",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L1",
+      "id": "backend_server_express",
+      "community": 0,
+      "norm_label": "express"
+    },
+    {
+      "label": "redis",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L2",
+      "id": "backend_server_redis",
+      "community": 0,
+      "norm_label": "redis"
+    },
+    {
+      "label": "cors",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L3",
+      "id": "backend_server_cors",
+      "community": 0,
+      "norm_label": "cors"
+    },
+    {
+      "label": "app",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L5",
+      "id": "backend_server_app",
+      "community": 0,
+      "norm_label": "app"
+    },
+    {
+      "label": "client",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L9",
+      "id": "backend_server_client",
+      "community": 0,
+      "norm_label": "client"
+    },
+    {
+      "label": "id",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L13",
+      "id": "backend_server_id",
+      "community": 0,
+      "norm_label": "id"
+    },
+    {
+      "label": "tasks",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L28",
+      "id": "backend_server_tasks",
+      "community": 0,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "worker.js",
+      "file_type": "code",
+      "source_file": "worker/worker.js",
+      "source_location": "L1",
+      "id": "worker_worker_js",
+      "community": 2,
+      "norm_label": "worker.js"
+    },
+    {
+      "label": "redis",
+      "file_type": "code",
+      "source_file": "worker/worker.js",
+      "source_location": "L1",
+      "id": "worker_worker_redis",
+      "community": 2,
+      "norm_label": "redis"
+    },
+    {
+      "label": "client",
+      "file_type": "code",
+      "source_file": "worker/worker.js",
+      "source_location": "L3",
+      "id": "worker_worker_client",
+      "community": 2,
+      "norm_label": "client"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "worker/worker.js",
+      "source_location": "L5",
+      "id": "worker_worker_run",
+      "community": 2,
+      "norm_label": "run()"
+    },
+    {
+      "label": "POST /task",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "id": "server_post_task",
+      "community": 3,
+      "norm_label": "post /task"
+    },
+    {
+      "label": "GET /metrics",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "id": "server_get_metrics",
+      "community": 5,
+      "norm_label": "get /metrics"
+    },
+    {
+      "label": "Worker Process Loop",
+      "file_type": "code",
+      "source_file": "worker/worker.js",
+      "id": "worker_run",
+      "community": 3,
+      "norm_label": "worker process loop"
+    },
+    {
+      "label": "addTask",
+      "file_type": "code",
+      "source_file": "frontend/index.html",
+      "id": "index_addtask",
+      "community": 3,
+      "norm_label": "addtask"
+    },
+    {
+      "label": "Redis Service",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "id": "dockercompose_redis",
+      "community": 1,
+      "norm_label": "redis service"
+    },
+    {
+      "label": "Backend Service",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "id": "dockercompose_backend",
+      "community": 1,
+      "norm_label": "backend service"
+    },
+    {
+      "label": "Worker Service",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "id": "dockercompose_worker",
+      "community": 1,
+      "norm_label": "worker service"
+    },
+    {
+      "label": "Frontend Service",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "id": "dockercompose_frontend",
+      "community": 1,
+      "norm_label": "frontend service"
+    },
+    {
+      "label": "Prometheus Service",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "id": "dockercompose_prometheus",
+      "community": 4,
+      "norm_label": "prometheus service"
+    },
+    {
+      "label": "Grafana Service",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "id": "dockercompose_grafana",
+      "community": 4,
+      "norm_label": "grafana service"
+    },
+    {
+      "label": "TaskFlow",
+      "file_type": "document",
+      "source_file": "README.md",
+      "id": "readme_taskflow",
+      "community": 1,
+      "norm_label": "taskflow"
+    },
+    {
+      "label": "Kubernetes Transition",
+      "file_type": "document",
+      "source_file": "docs/feat.md",
+      "id": "feat_kubernetes_transition",
+      "community": 1,
+      "norm_label": "kubernetes transition"
+    },
+    {
+      "label": "Horizontal Pod Autoscaling",
+      "file_type": "document",
+      "source_file": "docs/feat.md",
+      "id": "feat_horizontal_pod_autoscaling",
+      "community": 6,
+      "norm_label": "horizontal pod autoscaling"
+    },
+    {
+      "label": "SQLite Database",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "id": "prd_sqlite",
+      "community": 7,
+      "norm_label": "sqlite database"
+    },
+    {
+      "label": "Prometheus Config",
+      "file_type": "document",
+      "source_file": "monitoring/prometheus.yml",
+      "id": "prometheus_config",
+      "community": 5,
+      "norm_label": "prometheus config"
+    },
+    {
+      "label": "Grafana Datasource",
+      "file_type": "document",
+      "source_file": "monitoring/grafana-datasource.yml",
+      "id": "grafana_datasource",
+      "community": 4,
+      "norm_label": "grafana datasource"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_express",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_redis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_cors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "backend_server_js",
+      "target": "backend_server_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker/worker.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "worker_worker_js",
+      "target": "worker_worker_redis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker/worker.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "worker_worker_js",
+      "target": "worker_worker_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker/worker.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "worker_worker_js",
+      "target": "worker_worker_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "index_addtask",
+      "target": "server_post_task"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "server_post_task",
+      "target": "worker_run"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "prometheus_config",
+      "target": "server_get_metrics"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "dockercompose_backend",
+      "target": "dockercompose_redis"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "dockercompose_worker",
+      "target": "dockercompose_redis"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source": "readme_taskflow",
+      "target": "dockercompose_redis"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "dockercompose_frontend",
+      "target": "dockercompose_backend"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source": "feat_kubernetes_transition",
+      "target": "dockercompose_backend"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "grafana_datasource",
+      "target": "dockercompose_prometheus"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "dockercompose_grafana",
+      "target": "dockercompose_prometheus"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "taskflow_system",
+      "label": "TaskFlow Core System",
+      "nodes": [
+        "dockercompose_frontend",
+        "dockercompose_backend",
+        "dockercompose_worker",
+        "dockercompose_redis"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    }
+  ],
+  "built_at_commit": "b826ce83d7e89a447e1959d90771fd298df9ab91"
+}

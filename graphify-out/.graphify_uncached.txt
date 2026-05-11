@@ -1,0 +1,9 @@
+E:\repo-dev\ctmp\backend\server.js
+E:\repo-dev\ctmp\worker\worker.js
+E:\repo-dev\ctmp\docker-compose.yml
+E:\repo-dev\ctmp\README.md
+E:\repo-dev\ctmp\docs\feat.md
+E:\repo-dev\ctmp\docs\prd.md
+E:\repo-dev\ctmp\frontend\index.html
+E:\repo-dev\ctmp\monitoring\grafana-datasource.yml
+E:\repo-dev\ctmp\monitoring\prometheus.yml
