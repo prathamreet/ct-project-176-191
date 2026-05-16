@@ -1,0 +1,51 @@
+{
+  "title": "TaskFlow: Ultimate Visibility Dashboard",
+  "panels": [
+    {
+      "title": "Active Pods (Backend vs Worker)",
+      "type": "timeseries",
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        { "expr": "count(up{service_name=\"backend-service\"})", "legendFormat": "Backend Pods" },
+        { "expr": "count(up{service_name=\"worker-service\"})", "legendFormat": "Worker Pods" }
+      ],
+      "options": { "colorMode": "background", "graphMode": "area" },
+      "description": "True number of replicas currently alive and scraped by Prometheus."
+    },
+    {
+      "title": "CPU Load per Service (Cores)",
+      "type": "timeseries",
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        { "expr": "sum(rate(process_cpu_seconds_total{service_name=\"backend-service\"}[1m]))", "legendFormat": "Backend Total CPU" },
+        { "expr": "sum(rate(process_cpu_seconds_total{service_name=\"worker-service\"}[1m]))", "legendFormat": "Worker Total CPU" }
+      ],
+      "description": "Real CPU usage pulled directly from the Node.js processes."
+    },
+    {
+      "title": "Task Throughput: Total vs Completed",
+      "type": "timeseries",
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 7 },
+      "targets": [
+        { "expr": "taskflow_tasks_total", "legendFormat": "Total Submitted" },
+        { "expr": "taskflow_tasks_completed", "legendFormat": "Processed" }
+      ]
+    },
+    {
+      "title": "Processing Speed (Tasks / Second)",
+      "type": "stat",
+      "gridPos": { "h": 9, "w": 6, "x": 12, "y": 7 },
+      "targets": [{ "expr": "rate(taskflow_tasks_completed[1m])" }],
+      "description": "How fast your workers are solving the tasks."
+    },
+    {
+      "title": "Current Queue Pressure (Pending)",
+      "type": "gauge",
+      "gridPos": { "h": 9, "w": 6, "x": 18, "y": 7 },
+      "targets": [{ "expr": "taskflow_tasks_pending" }],
+      "fieldConfig": {
+        "defaults": { "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "red", "value": 100 }] } }
+      }
+    }
+  ]
+}
