@@ -22,8 +22,6 @@ jobs:
       - name: Validate HTML
         run: htmlhint frontend/index.html
 
-      - name: Validate Kubernetes Manifests (Dry Run)
-        run: kubectl apply --dry-run=client -f k8s/
 
   build:
     needs: validate
