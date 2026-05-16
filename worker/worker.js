@@ -14,10 +14,6 @@ async function processTasks() {
             if (taskStr) {
                 const task = JSON.parse(taskStr);
                 
-                // Simulate Heavy CPU Load so HPA scales the workers!
-                const end = Date.now() + 200; // 200ms of CPU load
-                while (Date.now() < end) { Math.sqrt(Math.random()); }
-                
                 await client.hSet(`task:${task.id}`, { status: 'completed', result: 'Success' });
                 processedCount++;
             } else {

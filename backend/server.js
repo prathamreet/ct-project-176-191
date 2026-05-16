@@ -13,10 +13,6 @@ app.post('/task', async (req, res) => {
     const id = Math.random().toString(36).substring(7);
     const { task } = req.body;
     
-    // Simulate CPU Load so HPA scales the backend!
-    const end = Date.now() + 50; // 50ms of CPU load
-    while (Date.now() < end) { Math.sqrt(Math.random()); }
-    
     // Store task state in Redis Hash
     await client.hSet(`task:${id}`, { id, task, status: 'pending', result: '' });
     // Add to list of all tasks for display
