@@ -13,6 +13,10 @@ app.post('/task', async (req, res) => {
     const id = Math.random().toString(36).substring(7);
     const { task } = req.body;
     
+    // Simulate CPU Load so HPA scales the backend!
+    const end = Date.now() + 50; // 50ms of CPU load
+    while (Date.now() < end) { Math.sqrt(Math.random()); }
+    
     // Store task state in Redis Hash
     await client.hSet(`task:${id}`, { id, task, status: 'pending', result: '' });
     // Add to list of all tasks for display
@@ -60,6 +64,9 @@ app.get('/metrics', async (req, res) => {
         if (status === 'pending') pending++;
     }
     
+    const cpu = process.cpuUsage();
+    const cpuSeconds = (cpu.user + cpu.system) / 1e6;
+
     res.set('Content-Type', 'text/plain');
     res.send(`
 # HELP taskflow_tasks_total Total tasks
@@ -71,6 +78,9 @@ taskflow_tasks_completed ${completed}
 # HELP taskflow_tasks_pending Pending tasks
 # TYPE taskflow_tasks_pending gauge
 taskflow_tasks_pending ${pending}
+# HELP process_cpu_seconds_total CPU usage of the backend process
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total ${cpuSeconds}
     `);
 });
 
