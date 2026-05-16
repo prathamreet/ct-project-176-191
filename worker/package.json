@@ -4,6 +4,7 @@
   "main": "worker.js",
   "dependencies": {
     "redis": "^4.6.10",
-    "better-sqlite3": "^9.4.3"
+    "better-sqlite3": "^9.4.3",
+    "express": "^4.18.2"
   }
 }
