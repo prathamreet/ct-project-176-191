@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: taskflow-backend:v3
+        image: taskflow-backend:v4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
