@@ -1,2 +1,0 @@
-FROM prom/prometheus
-COPY ./monitoring/prometheus.yml /etc/prometheus/prometheus.yml

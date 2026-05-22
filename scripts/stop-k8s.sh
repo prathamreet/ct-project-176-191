@@ -10,7 +10,7 @@ echo -e "${RED}Executing Kill Switch! Stopping the Stress Test and Tearing down 
 
 # Step 1: Delete all Kubernetes resources defined in the k8s directory
 echo -e "\n${YELLOW}Deleting Deployments, Services, HPAs, and PVCs...${NC}"
-kubectl delete -f k8s/
+kubectl delete -f infra/k8s/
 
 # Step 2: Remove the Metrics Server
 echo -e "\n${YELLOW}Removing Metrics Server...${NC}"

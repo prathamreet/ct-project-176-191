@@ -1,19 +1,23 @@
 {
-  "E:\\repo-dev\\ctmp\\backend\\server.js": {
-    "mtime": 1779456119.818868,
-    "hash": "50fa124ba9c55438babdaae3ad966199"
+  "E:\\repo-dev\\ctmp\\scripts\\stress.js": {
+    "mtime": 1779459135.7500913,
+    "hash": "2849499d37e349a6e0207efd01c56a2d"
   },
-  "E:\\repo-dev\\ctmp\\worker\\worker.js": {
-    "mtime": 1779456119.818868,
-    "hash": "db9b685057a9538959a2a85ee86981c0"
+  "E:\\repo-dev\\ctmp\\services\\backend\\server.js": {
+    "mtime": 1779459135.7448092,
+    "hash": "e2a6e0f59f6535308b2c0d4b30d3c6e0"
+  },
+  "E:\\repo-dev\\ctmp\\services\\worker\\worker.js": {
+    "mtime": 1779459135.7511742,
+    "hash": "dc5b3fa61d80d22c677290626842b06d"
   },
   "E:\\repo-dev\\ctmp\\docker-compose.yml": {
-    "mtime": 1777826524.9505653,
-    "hash": "e3462c48dfe8133d63faed29f3728321"
+    "mtime": 1779459303.3036876,
+    "hash": "5e9f63301996b003d8ca5c5298ba6294"
   },
   "E:\\repo-dev\\ctmp\\README.md": {
-    "mtime": 1779456119.818868,
-    "hash": "23f25b91d2eabb2cbc87e775fd218fb4"
+    "mtime": 1779459347.7139864,
+    "hash": "fae34bd271437caa4865980df5643524"
   },
   "E:\\repo-dev\\ctmp\\docs\\feat.md": {
     "mtime": 1778940025.942563,
@@ -23,16 +27,36 @@
     "mtime": 1778940025.9435866,
     "hash": "11bde506eed16a2496a3719ebe3f3274"
   },
-  "E:\\repo-dev\\ctmp\\frontend\\index.html": {
-    "mtime": 1777995244.2416863,
-    "hash": "9d459b5ad38a2b6270235d1c660e6ce6"
+  "E:\\repo-dev\\ctmp\\infra\\k8s\\backend.yaml": {
+    "mtime": 1779459135.747969,
+    "hash": "fc18946ce8fa7c09161c271cc87f64aa"
   },
-  "E:\\repo-dev\\ctmp\\monitoring\\grafana-datasource.yml": {
+  "E:\\repo-dev\\ctmp\\infra\\k8s\\frontend.yaml": {
+    "mtime": 1779459135.747969,
+    "hash": "960dfe399bf18134423a07454aa46a87"
+  },
+  "E:\\repo-dev\\ctmp\\infra\\k8s\\monitoring.yaml": {
+    "mtime": 1779459135.748533,
+    "hash": "6e86379bfdc90336ffd5c49746207d88"
+  },
+  "E:\\repo-dev\\ctmp\\infra\\k8s\\redis.yaml": {
+    "mtime": 1779459135.748533,
+    "hash": "3cc06d946c0017248bba4703dcdbeaaa"
+  },
+  "E:\\repo-dev\\ctmp\\infra\\k8s\\worker.yaml": {
+    "mtime": 1779459135.7490456,
+    "hash": "e6995a84fbe574bc23bafea5d5dc0d9e"
+  },
+  "E:\\repo-dev\\ctmp\\infra\\monitoring\\grafana-datasource.yml": {
     "mtime": 1777819996.9187188,
     "hash": "7bdd32324118fe4fe11e8f5920c9e7bc"
   },
-  "E:\\repo-dev\\ctmp\\monitoring\\prometheus.yml": {
+  "E:\\repo-dev\\ctmp\\infra\\monitoring\\prometheus.yml": {
     "mtime": 1777819991.741208,
     "hash": "0c348a6b1e823a972b960cac6d21014b"
+  },
+  "E:\\repo-dev\\ctmp\\services\\frontend\\index.html": {
+    "mtime": 1777995244.2416863,
+    "hash": "9d459b5ad38a2b6270235d1c660e6ce6"
   }
 }

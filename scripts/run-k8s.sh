@@ -6,12 +6,12 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 echo -e "${CYAN}Building Docker Images for TaskFlow...${NC}"
-docker build -t taskflow-backend:v4 ./backend
-docker build -t taskflow-worker:v4 ./worker
-docker build -t taskflow-frontend:v4 ./frontend
+docker build -t taskflow-backend:v4 ./services/backend
+docker build -t taskflow-worker:v4 ./services/worker
+docker build -t taskflow-frontend:v4 ./services/frontend
 
 echo -e "\n${CYAN}Applying Kubernetes Manifests...${NC}"
-kubectl apply -f k8s/
+kubectl apply -f infra/k8s/
 
 echo -e "\n${CYAN}Installing Metrics Server for Autoscaling (HPA)...${NC}"
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
@@ -33,7 +33,7 @@ gnome-terminal --title="Prometheus Port-Forward" -- bash -c "kubectl port-forwar
 gnome-terminal --title="Grafana Port-Forward" -- bash -c "kubectl port-forward svc/grafana-service 3000:3000"
 
 echo -e "\n${GREEN}All services have been deployed and port-forwarded!${NC}"
-echo -e "${YELLOW}You can now run 'node stress.js' in this terminal to start the load test.${NC}"
+echo -e "${YELLOW}You can now run 'node scripts/stress.js' in this terminal to start the load test.${NC}"
 echo -e "${CYAN}Backend:${NC} http://localhost:5000"
 echo -e "${CYAN}Frontend:${NC} http://localhost:8080"
 echo -e "${CYAN}Prometheus:${NC} http://localhost:9090"
