@@ -60,23 +60,21 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>ctmp — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 87 nodes, 76 edges, 14 communities. Commit: b283316</p>
+<p class="subtitle">Generated from graphify knowledge graph: 39 nodes, 34 edges, 11 communities. Commit: ff92311</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
-    <a href="#analysis-clustering">Analysis &amp; Clustering</a>
-    <a href="#backend-app-setup">Backend App Setup</a>
-    <a href="#worker-processing">Worker Processing</a>
-    <a href="#task-processing-flow">Task Processing Flow</a>
-    <a href="#metrics-export">Metrics Export</a>
-    <a href="#kubernetes-features">Kubernetes Features</a>
-    <a href="#storage-docs">Storage Docs</a>
-    <a href="#worker-post-task">Worker Post Task</a>
-    <a href="#grafana-service-docker">Grafana Service Docker</a>
-    <a href="#get-metrics-backend">Get Metrics Backend</a>
-    <a href="#featmd-docs">Featmd Docs</a>
-    <a href="#horizontal-pod-autoscaling">Horizontal Pod Autoscaling</a>
-    <a href="#sqlite-database-docs">Sqlite Database Docs</a>
+    <a href="#backend-server-core">Backend Server Core</a>
+    <a href="#task-workflow">Task Workflow</a>
+    <a href="#worker-core">Worker Core</a>
+    <a href="#docker-compose-services">Docker Compose Services</a>
+    <a href="#observability-architecture">Observability Architecture</a>
+    <a href="#monitoring-stack">Monitoring Stack</a>
+    <a href="#prometheus-metrics">Prometheus Metrics</a>
+    <a href="#grafana-dashboards">Grafana Dashboards</a>
+    <a href="#autoscaling-features">Autoscaling Features</a>
+    <a href="#database-system">Database System</a>
+    <a href="#frontend-ui">Frontend UI</a>
 </div>
 
 <!-- ====== Architecture Overview ====== -->
@@ -86,34 +84,30 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    ANALYSIS_CLUSTERING_C79796DA("Analysis &amp; Clustering<br/><small>21 nodes</small>")
-    class ANALYSIS_CLUSTERING_C79796DA module;
-    BACKEND_APP_SETUP_993CCCBA("Backend App Setup<br/><small>17 nodes</small>")
-    class BACKEND_APP_SETUP_993CCCBA module;
-    WORKER_PROCESSING_64AE9066("Worker Processing<br/><small>10 nodes</small>")
-    class WORKER_PROCESSING_64AE9066 module;
-    TASK_PROCESSING_FLOW_19D7B44E("Task Processing Flow<br/><small>9 nodes</small>")
-    class TASK_PROCESSING_FLOW_19D7B44E module;
-    METRICS_EXPORT_EC3E66E8("Metrics Export<br/><small>8 nodes</small>")
-    class METRICS_EXPORT_EC3E66E8 module;
-    KUBERNETES_FEATURES_B6AE64CF("Kubernetes Features<br/><small>6 nodes</small>")
-    class KUBERNETES_FEATURES_B6AE64CF module;
-    STORAGE_DOCS_06DEE855("Storage Docs<br/><small>5 nodes</small>")
-    class STORAGE_DOCS_06DEE855 module;
-    WORKER_POST_TASK_AF2A4756("Worker Post Task<br/><small>3 nodes</small>")
-    class WORKER_POST_TASK_AF2A4756 module;
-    GRAFANA_SERVICE_DOCKER_9214E9F9("Grafana Service Docker<br/><small>3 nodes</small>")
-    class GRAFANA_SERVICE_DOCKER_9214E9F9 module;
-    GET_METRICS_BACKEND_B978DD0C("Get Metrics Backend<br/><small>2 nodes</small>")
-    class GET_METRICS_BACKEND_B978DD0C module;
-    FEATMD_DOCS_47373583("Featmd Docs<br/><small>1 nodes</small>")
-    class FEATMD_DOCS_47373583 module;
-    HORIZONTAL_POD_AUTOSCALING_384E0C8B("Horizontal Pod Autoscaling<br/><small>1 nodes</small>")
-    class HORIZONTAL_POD_AUTOSCALING_384E0C8B module;
-    SQLITE_DATABASE_DOCS_011B599C("Sqlite Database Docs<br/><small>1 nodes</small>")
-    class SQLITE_DATABASE_DOCS_011B599C module;
-    WORKER_PROCESSING_64AE9066 -->|contains x2| ANALYSIS_CLUSTERING_C79796DA
-    ANALYSIS_CLUSTERING_C79796DA -->|contains| WORKER_PROCESSING_64AE9066
+    BACKEND_SERVER_CORE_229CDFBF("Backend Server Core<br/><small>8 nodes</small>")
+    class BACKEND_SERVER_CORE_229CDFBF module;
+    TASK_WORKFLOW_1D958BDE("Task Workflow<br/><small>8 nodes</small>")
+    class TASK_WORKFLOW_1D958BDE module;
+    WORKER_CORE_DFFD60C8("Worker Core<br/><small>5 nodes</small>")
+    class WORKER_CORE_DFFD60C8 module;
+    DOCKER_COMPOSE_SERVICES_837B28A0("Docker Compose Services<br/><small>5 nodes</small>")
+    class DOCKER_COMPOSE_SERVICES_837B28A0 module;
+    OBSERVABILITY_ARCHITECTURE_BACB4589("Observability Architecture<br/><small>4 nodes</small>")
+    class OBSERVABILITY_ARCHITECTURE_BACB4589 module;
+    MONITORING_STACK_EEAC6C84("Monitoring Stack<br/><small>3 nodes</small>")
+    class MONITORING_STACK_EEAC6C84 module;
+    PROMETHEUS_METRICS_09D125C3("Prometheus Metrics<br/><small>2 nodes</small>")
+    class PROMETHEUS_METRICS_09D125C3 module;
+    GRAFANA_DASHBOARDS_5E9C1168("Grafana Dashboards<br/><small>1 nodes</small>")
+    class GRAFANA_DASHBOARDS_5E9C1168 module;
+    AUTOSCALING_FEATURES_F3A2AA6F("Autoscaling Features<br/><small>1 nodes</small>")
+    class AUTOSCALING_FEATURES_F3A2AA6F module;
+    DATABASE_SYSTEM_0698F285("Database System<br/><small>1 nodes</small>")
+    class DATABASE_SYSTEM_0698F285 module;
+    FRONTEND_UI_6E293743("Frontend UI<br/><small>1 nodes</small>")
+    class FRONTEND_UI_6E293743 module;
+    DOCKER_COMPOSE_SERVICES_837B28A0 -->|relates| OBSERVABILITY_ARCHITECTURE_BACB4589
+    OBSERVABILITY_ARCHITECTURE_BACB4589 -->|explains| TASK_WORKFLOW_1D958BDE
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -130,690 +124,36 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Analysis &amp; Clustering</td><td>21</td><td><code>1, 4</code></td></tr><tr><td>Backend App Setup</td><td>17</td><td><code>0</code></td></tr><tr><td>Worker Processing</td><td>10</td><td><code>2</code></td></tr><tr><td>Task Processing Flow</td><td>9</td><td><code>3</code></td></tr><tr><td>Metrics Export</td><td>8</td><td><code>5</code></td></tr><tr><td>Kubernetes Features</td><td>6</td><td><code>6</code></td></tr><tr><td>Storage Docs</td><td>5</td><td><code>7</code></td></tr><tr><td>Worker Post Task</td><td>3</td><td><code>8</code></td></tr><tr><td>Grafana Service Docker</td><td>3</td><td><code>9</code></td></tr><tr><td>Get Metrics Backend</td><td>2</td><td><code>10</code></td></tr><tr><td>Featmd Docs</td><td>1</td><td><code>11</code></td></tr><tr><td>Horizontal Pod Autoscaling</td><td>1</td><td><code>12</code></td></tr><tr><td>Sqlite Database Docs</td><td>1</td><td><code>13</code></td></tr>
+      <tr><td>Backend Server Core</td><td>8</td><td><code>0</code></td></tr><tr><td>Task Workflow</td><td>8</td><td><code>1</code></td></tr><tr><td>Worker Core</td><td>5</td><td><code>2</code></td></tr><tr><td>Docker Compose Services</td><td>5</td><td><code>3</code></td></tr><tr><td>Observability Architecture</td><td>4</td><td><code>4</code></td></tr><tr><td>Monitoring Stack</td><td>3</td><td><code>5</code></td></tr><tr><td>Prometheus Metrics</td><td>2</td><td><code>6</code></td></tr><tr><td>Grafana Dashboards</td><td>1</td><td><code>10</code></td></tr><tr><td>Autoscaling Features</td><td>1</td><td><code>7</code></td></tr><tr><td>Database System</td><td>1</td><td><code>8</code></td></tr><tr><td>Frontend UI</td><td>1</td><td><code>9</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Backend App Setup -&gt; Analysis &amp; Clustering -&gt; Worker Processing -&gt; Task Processing Flow -&gt; Metrics Export -&gt; Kubernetes Features -&gt; Storage Docs</div>
+    <div class="arrow-chain">Backend Server Core -&gt; Task Workflow -&gt; Worker Core -&gt; Docker Compose Services -&gt; Observability Architecture -&gt; Monitoring Stack -&gt; Prometheus Metrics</div>
   </div>
 </div>
 <div class="grid">
   <div class="card">
     <h4>Graph Report Highlights</h4>
     <ul>
-      <li>87 nodes · 76 edges · 14 communities (11 shown, 3 thin omitted)</li>
-      <li>Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.9)</li>
+      <li>39 nodes · 34 edges · 11 communities (6 shown, 5 thin omitted)</li>
+      <li>Extraction: 65% EXTRACTED · 35% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.89)</li>
       <li>Token cost: 0 input · 0 output</li>
-      <li>1. `PRD — TaskFlow (Dockerized Task Queue System)` - 16 edges</li>
-      <li>2. `TaskFlow - Asynchronous Task Queue System` - 7 edges</li>
-      <li>3. `🔍 Command Line Reference (No Docker Desktop Needed)` - 6 edges</li>
+      <li>1. `TaskFlow System` - 5 edges</li>
+      <li>2. `run` - 3 edges</li>
+      <li>3. `Redis Service` - 3 edges</li>
     </ul>
   </div>
 </div>
 <hr>
-<!-- ====== 2. Analysis & Clustering ====== -->
-<h2 id="analysis-clustering">2. Analysis &amp; Clustering</h2>
-<p>Analysis &amp; Clustering groups implementation around readmemd, codebash, view, cluster, mostly in README.md. This section covers 21 nodes and 19 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 2. Backend Server Core ====== -->
+<h2 id="backend-server-core">2. Backend Server Core</h2>
+<p>Backend Server Core groups implementation around serverjs, backend, express, redis, mostly in backend/server.js. This section covers 8 nodes and 7 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Analysis &amp; Clustering (21 nodes, 19 edges)
-    ctmp_readme_command_line_reference_no_docker_des_7ea22033("🔍 Command Line Reference (No Docker Des...<br/><small>README.md</small>")
-    ctmp_readme_kubernetes_orchestration_597a4ee3("🚢 Kubernetes Orchestration<br/><small>README.md</small>")
-    ctmp_readme_kubernetes_quick_start_automated_5aa0f479("🚀 Kubernetes Quick Start (Automated)<br/><small>README.md</small>")
-    ctmp_readme_cluster_health_84d9a442("🌍 Cluster Health<br/><small>README.md</small>")
-    ctmp_readme_check_logs_debug_2edb09f1("📜 Check Logs &amp; Debug<br/><small>README.md</small>")
-    ctmp_readme_see_auto_scaling_hpa_6568e394("🚦 See Auto-Scaling (HPA)<br/><small>README.md</small>")
-    ctmp_readme_stop_the_cluster_1fd5ea6d("Stop the Cluster<br/><small>README.md</small>")
-    ctmp_readme_stress_test_the_cluster_603dcd53("Stress Test the Cluster<br/><small>README.md</small>")
-    ctmp_readme_see_running_pods_d46ad97d("📦 See Running Pods<br/><small>README.md</small>")
-    ctmp_readme_see_networking_services_f76600fd("🕸️ See Networking (Services)<br/><small>README.md</small>")
-    ctmp_readme_access_the_services_17b6c090("Access the Services<br/><small>README.md</small>")
-    ctmp_readme_codeblock_10_a2e5b3b6("code:bash ( Check if your cluster (e.g...<br/><small>README.md</small>")
-    ctmp_readme_codeblock_8_f0053217("code:bash ( View all active internal n...<br/><small>README.md</small>")
-    ctmp_readme_codeblock_6_c4c0dfc6("code:bash ( View all pods in the defau...<br/><small>README.md</small>")
-    ctmp_readme_codeblock_7_46ccf595("code:bash ( View the current CPU usage...<br/><small>README.md</small>")
-    ctmp_readme_codeblock_9_8a3ef387("code:bash ( View the logs for a specif...<br/><small>README.md</small>")
-    ctmp_readme_codeblock_5_752a289c("code:bash (./stop-k8s.sh)<br/><small>README.md</small>")
-    ctmp_readme_codeblock_4_147ee089("code:bash (node stress.js)<br/><small>README.md</small>")
-    ctmp_readme_kubernetes_orchestration_597a4ee3 -->|contains| ctmp_readme_kubernetes_quick_start_automated_5aa0f479
-    ctmp_readme_kubernetes_quick_start_automated_5aa0f479 -->|contains| ctmp_readme_access_the_services_17b6c090
-    ctmp_readme_kubernetes_quick_start_automated_5aa0f479 -->|contains| ctmp_readme_stress_test_the_cluster_603dcd53
-    ctmp_readme_kubernetes_quick_start_automated_5aa0f479 -->|contains| ctmp_readme_stop_the_cluster_1fd5ea6d
-    ctmp_readme_stress_test_the_cluster_603dcd53 -->|contains| ctmp_readme_codeblock_4_147ee089
-    ctmp_readme_stop_the_cluster_1fd5ea6d -->|contains| ctmp_readme_codeblock_5_752a289c
-    ctmp_readme_command_line_reference_no_docker_des_7ea22033 -->|contains| ctmp_readme_see_running_pods_d46ad97d
-    ctmp_readme_command_line_reference_no_docker_des_7ea22033 -->|contains| ctmp_readme_see_auto_scaling_hpa_6568e394
-    ctmp_readme_command_line_reference_no_docker_des_7ea22033 -->|contains| ctmp_readme_see_networking_services_f76600fd
-    ctmp_readme_command_line_reference_no_docker_des_7ea22033 -->|contains| ctmp_readme_check_logs_debug_2edb09f1
-    ctmp_readme_command_line_reference_no_docker_des_7ea22033 -->|contains| ctmp_readme_cluster_health_84d9a442
-    ctmp_readme_see_running_pods_d46ad97d -->|contains| ctmp_readme_codeblock_6_c4c0dfc6
-    ctmp_readme_see_auto_scaling_hpa_6568e394 -->|contains| ctmp_readme_codeblock_7_46ccf595
-    ctmp_readme_see_networking_services_f76600fd -->|contains| ctmp_readme_codeblock_8_f0053217
-    ctmp_readme_check_logs_debug_2edb09f1 -->|contains| ctmp_readme_codeblock_9_8a3ef387
-    ctmp_readme_cluster_health_84d9a442 -->|contains| ctmp_readme_codeblock_10_a2e5b3b6
-    %% Omitted for readability: 3 nodes, 0 edges
-    class ctmp_readme_command_line_reference_no_docker_des_7ea22033 concept;
-    class ctmp_readme_kubernetes_orchestration_597a4ee3 concept;
-    class ctmp_readme_kubernetes_quick_start_automated_5aa0f479 concept;
-    class ctmp_readme_cluster_health_84d9a442 concept;
-    class ctmp_readme_check_logs_debug_2edb09f1 concept;
-    class ctmp_readme_see_auto_scaling_hpa_6568e394 concept;
-    class ctmp_readme_stop_the_cluster_1fd5ea6d concept;
-    class ctmp_readme_stress_test_the_cluster_603dcd53 concept;
-    class ctmp_readme_see_running_pods_d46ad97d concept;
-    class ctmp_readme_see_networking_services_f76600fd concept;
-    class ctmp_readme_access_the_services_17b6c090 concept;
-    class ctmp_readme_codeblock_10_a2e5b3b6 concept;
-    class ctmp_readme_codeblock_8_f0053217 concept;
-    class ctmp_readme_codeblock_6_c4c0dfc6 concept;
-    class ctmp_readme_codeblock_7_46ccf595 concept;
-    class ctmp_readme_codeblock_9_8a3ef387 concept;
-    class ctmp_readme_codeblock_5_752a289c concept;
-    class ctmp_readme_codeblock_4_147ee089 concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>🔍 Command Line Reference (No Docker Desktop Needed)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🔍 Command Line Reference (No Docker Desktop Needed).</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>📦 See Running Pods</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 📦 See Running Pods.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>code:bash (# View all pods in the default namespace)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# View all pods in the default namespace).</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>🚦 See Auto-Scaling (HPA)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🚦 See Auto-Scaling (HPA).</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>code:bash (# View the current CPU usage vs the target, and active repli)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# View the current CPU usage vs the target, and active repli).</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>🕸️ See Networking (Services)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🕸️ See Networking (Services).</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>code:bash (# View all active internal network load balancers)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# View all active internal network load balancers).</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>📜 Check Logs &amp; Debug</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 📜 Check Logs &amp; Debug.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>code:bash (# View the logs for a specific pod (replace with your pod&#x27;s )</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# View the logs for a specific pod (replace with your pod&#x27;s ).</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>🌍 Cluster Health</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🌍 Cluster Health.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>code:bash (# Check if your cluster (e.g., kind) is online and respondin)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (# Check if your cluster (e.g., kind) is online and respondin).</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>code:block11 (Developed as part of the Containerization Tool project.)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:block11 (Developed as part of the Containerization Tool project.).</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>🚢 Kubernetes Orchestration</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🚢 Kubernetes Orchestration.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>🏗️ Architecture &amp; Components</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🏗️ Architecture &amp; Components.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>📈 Horizontal Pod Autoscaling (HPA)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 📈 Horizontal Pod Autoscaling (HPA).</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>🚀 Kubernetes Quick Start (Automated)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 🚀 Kubernetes Quick Start (Automated).</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>Access the Services</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Access the Services.</td>
-</tr>
-<tr>
-  <td>18</td>
-  <td><code>Stress Test the Cluster</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Stress Test the Cluster.</td>
-</tr>
-<tr>
-  <td>19</td>
-  <td><code>code:bash (node stress.js)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (node stress.js).</td>
-</tr>
-<tr>
-  <td>20</td>
-  <td><code>Stop the Cluster</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Stop the Cluster.</td>
-</tr>
-<tr>
-  <td>21</td>
-  <td><code>code:bash (./stop-k8s.sh)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (./stop-k8s.sh).</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>README.md</code></td><td>21 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x19. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 3. Backend App Setup ====== -->
-<h2 id="backend-app-setup">3. Backend App Setup</h2>
-<p>Backend App Setup groups implementation around prdmd, docs, system, functional, mostly in docs/prd.md. This section covers 17 nodes and 16 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Backend App Setup (17 nodes, 16 edges)
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927("PRD — TaskFlow (Dockerized Task Queue S...<br/><small>docs/prd.md</small>")
-    docs_prd_md_dc48a5f0("prd.md")
-    docs_prd_1_overview_cfeffcd2("1. Overview<br/><small>docs/prd.md</small>")
-    docs_prd_2_objectives_24c35718("2. Objectives<br/><small>docs/prd.md</small>")
-    docs_prd_3_scope_797d58cc("3. Scope<br/><small>docs/prd.md</small>")
-    docs_prd_4_system_architecture_f4cd14b7("4. System Architecture<br/><small>docs/prd.md</small>")
-    docs_prd_10_ci_cd_db0defb7("10. CI/CD<br/><small>docs/prd.md</small>")
-    docs_prd_11_monitoring_46a4ad1b("11. Monitoring<br/><small>docs/prd.md</small>")
-    docs_prd_12_success_criteria_4cf26302("12. Success Criteria<br/><small>docs/prd.md</small>")
-    docs_prd_13_timeline_suggested_aad41c11("13. Timeline (Suggested)<br/><small>docs/prd.md</small>")
-    docs_prd_14_risks_1df6c1f6("14. Risks<br/><small>docs/prd.md</small>")
-    docs_prd_15_deliverables_596d6b63("15. Deliverables<br/><small>docs/prd.md</small>")
-    docs_prd_5_functional_requirements_0d74d2c2("5. Functional Requirements<br/><small>docs/prd.md</small>")
-    docs_prd_6_non_functional_requirements_752acf23("6. Non-Functional Requirements<br/><small>docs/prd.md</small>")
-    docs_prd_7_container_design_8851b736("7. Container Design<br/><small>docs/prd.md</small>")
-    docs_prd_8_api_design_minimal_1db61b90("8. API Design (Minimal)<br/><small>docs/prd.md</small>")
-    docs_prd_9_data_model_sqlite_503c0d0f("9. Data Model (SQLite)<br/><small>docs/prd.md</small>")
-    docs_prd_md_dc48a5f0 -->|contains| docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_1_overview_cfeffcd2
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_2_objectives_24c35718
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_3_scope_797d58cc
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_4_system_architecture_f4cd14b7
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_5_functional_requirements_0d74d2c2
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_6_non_functional_requirements_752acf23
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_7_container_design_8851b736
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_8_api_design_minimal_1db61b90
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_9_data_model_sqlite_503c0d0f
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_10_ci_cd_db0defb7
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_11_monitoring_46a4ad1b
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_12_success_criteria_4cf26302
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_13_timeline_suggested_aad41c11
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_14_risks_1df6c1f6
-    docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 -->|contains| docs_prd_15_deliverables_596d6b63
-    class docs_prd_prd_taskflow_dockerized_task_queue_syst_7320d927 concept;
-    class docs_prd_md_dc48a5f0 concept;
-    class docs_prd_1_overview_cfeffcd2 concept;
-    class docs_prd_2_objectives_24c35718 concept;
-    class docs_prd_3_scope_797d58cc concept;
-    class docs_prd_4_system_architecture_f4cd14b7 concept;
-    class docs_prd_10_ci_cd_db0defb7 concept;
-    class docs_prd_11_monitoring_46a4ad1b concept;
-    class docs_prd_12_success_criteria_4cf26302 concept;
-    class docs_prd_13_timeline_suggested_aad41c11 concept;
-    class docs_prd_14_risks_1df6c1f6 concept;
-    class docs_prd_15_deliverables_596d6b63 concept;
-    class docs_prd_5_functional_requirements_0d74d2c2 concept;
-    class docs_prd_6_non_functional_requirements_752acf23 concept;
-    class docs_prd_7_container_design_8851b736 concept;
-    class docs_prd_8_api_design_minimal_1db61b90 concept;
-    class docs_prd_9_data_model_sqlite_503c0d0f concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>prd.md</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing prd.md.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>PRD — TaskFlow (Dockerized Task Queue System)</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing PRD — TaskFlow (Dockerized Task Queue System).</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>1. Overview</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 1. Overview.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>2. Objectives</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 2. Objectives.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>3. Scope</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 3. Scope.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>4. System Architecture</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 4. System Architecture.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>5. Functional Requirements</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 5. Functional Requirements.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>6. Non-Functional Requirements</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 6. Non-Functional Requirements.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>7. Container Design</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 7. Container Design.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>8. API Design (Minimal)</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 8. API Design (Minimal).</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>9. Data Model (SQLite)</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 9. Data Model (SQLite).</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>10. CI/CD</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 10. CI/CD.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>11. Monitoring</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 11. Monitoring.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>12. Success Criteria</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 12. Success Criteria.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>13. Timeline (Suggested)</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 13. Timeline (Suggested).</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>14. Risks</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 14. Risks.</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>15. Deliverables</code><br><small style="color:var(--muted)">docs/prd.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing 15. Deliverables.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>docs/prd.md</code></td><td>17 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x16. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 4. Worker Processing ====== -->
-<h2 id="worker-processing">4. Worker Processing</h2>
-<p>Worker Processing groups implementation around readmemd, start, codebash, taskflow, mostly in README.md. This section covers 10 nodes and 9 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Worker Processing (10 nodes, 9 edges)
-    ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8("TaskFlow - Asynchronous Task Queue System<br/><small>README.md</small>")
-    ctmp_readme_quick_start_d8e1c00c("Quick Start<br/><small>README.md</small>")
-    ctmp_readme_start_the_cluster_7925c43f("Start the Cluster<br/><small>README.md</small>")
-    readme_md_eeb98ce0("README.md")
-    ctmp_readme_project_structure_0b3b3dfc("Project Structure<br/><small>README.md</small>")
-    ctmp_readme_architecture_services_c978f62c("Architecture &amp; Services<br/><small>README.md</small>")
-    ctmp_readme_codeblock_3_893617fd("code:bash (./run-k8s.sh)<br/><small>README.md</small>")
-    ctmp_readme_key_technical_concepts_eb1cd82e("Key Technical Concepts<br/><small>README.md</small>")
-    ctmp_readme_codeblock_2_cf908322("code:bash (docker-compose up --build -d)<br/><small>README.md</small>")
-    ctmp_readme_codeblock_1_639743c6("code:text (├── backend/ API Server)<br/><small>README.md</small>")
-    readme_md_eeb98ce0 -->|contains| ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8
-    ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8 -->|contains| ctmp_readme_architecture_services_c978f62c
-    ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8 -->|contains| ctmp_readme_project_structure_0b3b3dfc
-    ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8 -->|contains| ctmp_readme_key_technical_concepts_eb1cd82e
-    ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8 -->|contains| ctmp_readme_quick_start_d8e1c00c
-    ctmp_readme_project_structure_0b3b3dfc -->|contains| ctmp_readme_codeblock_1_639743c6
-    ctmp_readme_quick_start_d8e1c00c -->|contains| ctmp_readme_codeblock_2_cf908322
-    ctmp_readme_quick_start_d8e1c00c -->|contains| ctmp_readme_codeblock_3_893617fd
-    ctmp_readme_start_the_cluster_7925c43f -->|contains| ctmp_readme_codeblock_3_893617fd
-    class ctmp_readme_taskflow_asynchronous_task_queue_sys_96354af8 concept;
-    class ctmp_readme_quick_start_d8e1c00c concept;
-    class ctmp_readme_start_the_cluster_7925c43f concept;
-    class readme_md_eeb98ce0 concept;
-    class ctmp_readme_project_structure_0b3b3dfc concept;
-    class ctmp_readme_architecture_services_c978f62c concept;
-    class ctmp_readme_codeblock_3_893617fd concept;
-    class ctmp_readme_key_technical_concepts_eb1cd82e concept;
-    class ctmp_readme_codeblock_2_cf908322 concept;
-    class ctmp_readme_codeblock_1_639743c6 concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>README.md</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing README.md.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>TaskFlow - Asynchronous Task Queue System</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing TaskFlow - Asynchronous Task Queue System.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>Architecture &amp; Services</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Architecture &amp; Services.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>Project Structure</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Project Structure.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>code:text (├── backend/      # API Server)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:text (├── backend/      # API Server).</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>Key Technical Concepts</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Key Technical Concepts.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>Quick Start</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Quick Start.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>code:bash (docker-compose up --build -d)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (docker-compose up --build -d).</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>Start the Cluster</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing Start the Cluster.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>code:bash (./run-k8s.sh)</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing code:bash (./run-k8s.sh).</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>README.md</code></td><td>10 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x9. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 5. Task Processing Flow ====== -->
-<h2 id="task-processing-flow">5. Task Processing Flow</h2>
-<p>Task Processing Flow groups implementation around serverjs, backend, express, redis, mostly in backend/server.js. This section covers 9 nodes and 8 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Task Processing Flow (9 nodes, 8 edges)
+    %% Section: Backend Server Core (8 nodes, 7 edges)
     backend_server_js_8b5ab4c1("server.js")
     backend_server_express_1dc3eba0("express<br/><small>backend/server.js</small>")
     backend_server_redis_9840f89d("redis<br/><small>backend/server.js</small>")
@@ -822,7 +162,6 @@ flowchart LR
     backend_server_client_9ff90f0f("client<br/><small>backend/server.js</small>")
     backend_server_id_9a9ccc41("id<br/><small>backend/server.js</small>")
     backend_server_tasks_684a3147("tasks<br/><small>backend/server.js</small>")
-    backend_server_cpu_8b18a600("cpu<br/><small>backend/server.js</small>")
     backend_server_js_8b5ab4c1 -->|contains| backend_server_express_1dc3eba0
     backend_server_js_8b5ab4c1 -->|contains| backend_server_redis_9840f89d
     backend_server_js_8b5ab4c1 -->|contains| backend_server_cors_f91d0d3a
@@ -830,7 +169,6 @@ flowchart LR
     backend_server_js_8b5ab4c1 -->|contains| backend_server_client_9ff90f0f
     backend_server_js_8b5ab4c1 -->|contains| backend_server_id_9a9ccc41
     backend_server_js_8b5ab4c1 -->|contains| backend_server_tasks_684a3147
-    backend_server_js_8b5ab4c1 -->|contains| backend_server_cpu_8b18a600
     class backend_server_js_8b5ab4c1 module;
     class backend_server_express_1dc3eba0 function;
     class backend_server_redis_9840f89d function;
@@ -839,7 +177,6 @@ flowchart LR
     class backend_server_client_9ff90f0f entry;
     class backend_server_id_9a9ccc41 function;
     class backend_server_tasks_684a3147 function;
-    class backend_server_cpu_8b18a600 function;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -925,13 +262,134 @@ flowchart LR
   <td>No direct outbound edge</td>
   <td>tasks node in backend/server.js.</td>
 </tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>backend/server.js</code></td><td>8 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x7. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 3. Task Workflow ====== -->
+<h2 id="task-workflow">3. Task Workflow</h2>
+<p>Task Workflow groups implementation around readmemd, backend, worker, service, mostly in README.md, backend/server.js, worker/worker.js. This section covers 8 nodes and 9 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Task Workflow (8 nodes, 9 edges)
+    subgraph task_workflow_README_md_6618b0d9["README.md"]
+        readme_asynchronouspattern_1d782522("Asynchronous Pattern<br/><small>README.md</small>")
+        readme_backend_defdd9cf("Backend Service<br/><small>README.md</small>")
+        readme_prometheus_8ad9e9ad("Metrics (Prometheus)<br/><small>README.md</small>")
+        readme_redis_a1375cce("Queue/DB (Redis)<br/><small>README.md</small>")
+        readme_worker_7546122f("Worker Service<br/><small>README.md</small>")
+    end
+    server_post_task_ea66bbc7("POST /task<br/><small>backend/server.js</small>")
+    index_addtask_fb95e001("addTask<br/><small>frontend/index.html</small>")
+    worker_run_00618ed8("run<br/><small>worker/worker.js</small>")
+    server_post_task_ea66bbc7 -->|calls| index_addtask_fb95e001
+    class readme_asynchronouspattern_1d782522 concept;
+    class readme_backend_defdd9cf concept;
+    class readme_prometheus_8ad9e9ad concept;
+    class readme_redis_a1375cce concept;
+    class readme_worker_7546122f concept;
+    class server_post_task_ea66bbc7 klass;
+    class index_addtask_fb95e001 function;
+    class worker_run_00618ed8 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
 <tr>
-  <td>9</td>
-  <td><code>cpu</code><br><small style="color:var(--muted)">backend/server.js</small></td>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>POST /task</code><br><small style="color:var(--muted)">backend/server.js</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>addTask</code><br><small style="color:var(--muted)">frontend/index.html</small></td>
+  <td>POST /task node in backend/server.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>run</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>cpu node in backend/server.js.</td>
+  <td>run node in worker/worker.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>addTask</code><br><small style="color:var(--muted)">frontend/index.html</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>POST /task</code><br><small style="color:var(--muted)">backend/server.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>addTask node in frontend/index.html.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>Backend Service</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Backend Service.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>Worker Service</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Worker Service.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>Queue/DB (Redis)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Queue/DB (Redis).</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>Metrics (Prometheus)</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Metrics (Prometheus).</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>Asynchronous Pattern</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Asynchronous Pattern.</td>
 </tr>
 </table>
 
@@ -940,47 +398,45 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>backend/server.js</code></td><td>9 nodes</td></tr>
+      <tr><td><code>README.md</code></td><td>5 nodes</td></tr>
+<tr><td><code>backend/server.js</code></td><td>1 nodes</td></tr>
+<tr><td><code>frontend/index.html</code></td><td>1 nodes</td></tr>
+<tr><td><code>worker/worker.js</code></td><td>1 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x8. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: shares data with x4, relates x2, calls x1, implements x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 6. Metrics Export ====== -->
-<h2 id="metrics-export">6. Metrics Export</h2>
-<p>Metrics Export groups implementation around workerjs, worker, redis, express, mostly in worker/worker.js. This section covers 8 nodes and 7 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 4. Worker Core ====== -->
+<h2 id="worker-core">4. Worker Core</h2>
+<p>Worker Core groups implementation around workerjs, worker, redis, client, mostly in worker.js, worker/worker.js. This section covers 5 nodes and 6 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Metrics Export (8 nodes, 7 edges)
+    %% Section: Worker Core (5 nodes, 6 edges)
+    subgraph worker_core_worker_js_22bfaf7d["worker.js"]
+        worker_worker_client_805d6755("client<br/><small>worker.js</small>")
+        worker_worker_redis_079cc924("redis<br/><small>worker.js</small>")
+        worker_worker_run_6bcd3062("run()<br/><small>worker.js</small>")
+        worker_js_31141c00("worker.js")
+    end
     worker_worker_js_d9877526("worker.js")
-    worker_worker_redis_079cc924("redis<br/><small>worker/worker.js</small>")
-    worker_worker_express_5fb3fe7c("express<br/><small>worker/worker.js</small>")
-    worker_worker_app_1f6a86f1("app<br/><small>worker/worker.js</small>")
-    worker_worker_client_805d6755("client<br/><small>worker/worker.js</small>")
-    worker_worker_processtasks_fcd17ed4("processTasks()<br/><small>worker/worker.js</small>")
-    worker_worker_cpu_47c9ba52("cpu<br/><small>worker/worker.js</small>")
-    worker_worker_run_6bcd3062("run()<br/><small>worker/worker.js</small>")
     worker_worker_js_d9877526 -->|contains| worker_worker_redis_079cc924
-    worker_worker_js_d9877526 -->|contains| worker_worker_express_5fb3fe7c
-    worker_worker_js_d9877526 -->|contains| worker_worker_app_1f6a86f1
     worker_worker_js_d9877526 -->|contains| worker_worker_client_805d6755
-    worker_worker_js_d9877526 -->|contains| worker_worker_processtasks_fcd17ed4
-    worker_worker_js_d9877526 -->|contains| worker_worker_cpu_47c9ba52
     worker_worker_js_d9877526 -->|contains| worker_worker_run_6bcd3062
-    class worker_worker_js_d9877526 module;
-    class worker_worker_redis_079cc924 function;
-    class worker_worker_express_5fb3fe7c function;
-    class worker_worker_app_1f6a86f1 function;
+    worker_worker_redis_079cc924 -->|contains| worker_js_31141c00
+    worker_worker_client_805d6755 -->|contains| worker_js_31141c00
+    worker_worker_run_6bcd3062 -->|contains| worker_js_31141c00
     class worker_worker_client_805d6755 entry;
-    class worker_worker_processtasks_fcd17ed4 function;
-    class worker_worker_cpu_47c9ba52 function;
+    class worker_worker_redis_079cc924 function;
     class worker_worker_run_6bcd3062 function;
+    class worker_js_31141c00 module;
+    class worker_worker_js_d9877526 module;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1012,59 +468,35 @@ flowchart LR
 </tr>
 <tr>
   <td>2</td>
-  <td><code>redis</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
+  <td><code>redis</code><br><small style="color:var(--muted)">worker.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>redis node in worker/worker.js.</td>
+  <td>redis node in worker.js.</td>
 </tr>
 <tr>
   <td>3</td>
-  <td><code>express</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>express node in worker/worker.js.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>app</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>app node in worker/worker.js.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>client</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
+  <td><code>client</code><br><small style="color:var(--muted)">worker.js</small></td>
   <td><span class="tag tag-cmd">Entry</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>client node in worker/worker.js.</td>
+  <td>client node in worker.js.</td>
 </tr>
 <tr>
-  <td>6</td>
-  <td><code>processTasks()</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
+  <td>4</td>
+  <td><code>run()</code><br><small style="color:var(--muted)">worker.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>processTasks() node in worker/worker.js.</td>
+  <td>run() node in worker.js.</td>
 </tr>
 <tr>
-  <td>7</td>
-  <td><code>cpu</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td>5</td>
+  <td><code>worker.js</code><br><small style="color:var(--muted)">worker.js</small></td>
+  <td><span class="tag tag-class">Module</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>cpu node in worker/worker.js.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>run()</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>run() node in worker/worker.js.</td>
+  <td>worker.js node in worker.js.</td>
 </tr>
 </table>
 
@@ -1073,31 +505,31 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>worker/worker.js</code></td><td>8 nodes</td></tr>
+      <tr><td><code>worker.js</code></td><td>4 nodes</td></tr>
+<tr><td><code>worker/worker.js</code></td><td>1 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x7. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x6. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 7. Kubernetes Features ====== -->
-<h2 id="kubernetes-features">7. Kubernetes Features</h2>
-<p>Kubernetes Features groups implementation around service, docker, composeyml, redis, mostly in docker-compose.yml, README.md, docs/feat.md. This section covers 6 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 5. Docker Compose Services ====== -->
+<h2 id="docker-compose-services">5. Docker Compose Services</h2>
+<p>Docker Compose Services groups implementation around service, docker, composeyml, redis, mostly in docker-compose.yml, docs/feat.md. This section covers 5 nodes and 4 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Kubernetes Features (6 nodes, 5 edges)
-    subgraph kubernetes_features_docker_compose_yml_8aed75d3["docker-compose.yml"]
+    %% Section: Docker Compose Services (5 nodes, 4 edges)
+    subgraph docker_compose_services_docker_compose_yml_c96581ee["docker-compose.yml"]
         dockercompose_redis_d5c2fee7("Redis Service<br/><small>docker-compose.yml</small>")
         dockercompose_backend_1ae061aa("Backend Service<br/><small>docker-compose.yml</small>")
         dockercompose_worker_e8689a0f("Worker Service<br/><small>docker-compose.yml</small>")
         dockercompose_frontend_d9579262("Frontend Service<br/><small>docker-compose.yml</small>")
     end
-    readme_taskflow_05184036("TaskFlow<br/><small>README.md</small>")
     feat_kubernetes_transition_28edff64("Kubernetes Transition<br/><small>docs/feat.md</small>")
     dockercompose_redis_d5c2fee7 -->|calls| dockercompose_backend_1ae061aa
     dockercompose_redis_d5c2fee7 -->|calls| dockercompose_worker_e8689a0f
@@ -1106,7 +538,6 @@ flowchart LR
     class dockercompose_backend_1ae061aa concept;
     class dockercompose_worker_e8689a0f concept;
     class dockercompose_frontend_d9579262 concept;
-    class readme_taskflow_05184036 concept;
     class feat_kubernetes_transition_28edff64 concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
@@ -1163,14 +594,6 @@ flowchart LR
 </tr>
 <tr>
   <td>5</td>
-  <td><code>TaskFlow</code><br><small style="color:var(--muted)">README.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing TaskFlow.</td>
-</tr>
-<tr>
-  <td>6</td>
   <td><code>Kubernetes Transition</code><br><small style="color:var(--muted)">docs/feat.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
@@ -1185,39 +608,35 @@ flowchart LR
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
       <tr><td><code>docker-compose.yml</code></td><td>4 nodes</td></tr>
-<tr><td><code>README.md</code></td><td>1 nodes</td></tr>
 <tr><td><code>docs/feat.md</code></td><td>1 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: calls x3, relates x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 8. Storage Docs ====== -->
-<h2 id="storage-docs">8. Storage Docs</h2>
-<p>Storage Docs groups implementation around stressjs, http, readline, promptuser, mostly in stress.js. This section covers 5 nodes and 4 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 6. Observability Architecture ====== -->
+<h2 id="observability-architecture">6. Observability Architecture</h2>
+<p>Observability Architecture groups implementation around readmemd, taskflow, system, zero, mostly in README.md. This section covers 4 nodes and 3 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Storage Docs (5 nodes, 4 edges)
-    stress_js_723bd8c6("stress.js")
-    ctmp_stress_http_21a32802("http<br/><small>stress.js</small>")
-    ctmp_stress_readline_65bcd390("readline<br/><small>stress.js</small>")
-    ctmp_stress_rl_3a8b2552("rl<br/><small>stress.js</small>")
-    ctmp_stress_promptuser_150060cf("promptUser()<br/><small>stress.js</small>")
-    stress_js_723bd8c6 -->|contains| ctmp_stress_http_21a32802
-    stress_js_723bd8c6 -->|contains| ctmp_stress_readline_65bcd390
-    stress_js_723bd8c6 -->|contains| ctmp_stress_rl_3a8b2552
-    stress_js_723bd8c6 -->|contains| ctmp_stress_promptuser_150060cf
-    class stress_js_723bd8c6 module;
-    class ctmp_stress_http_21a32802 function;
-    class ctmp_stress_readline_65bcd390 function;
-    class ctmp_stress_rl_3a8b2552 function;
-    class ctmp_stress_promptuser_150060cf function;
+    %% Section: Observability Architecture (4 nodes, 3 edges)
+    readme_taskflow_05184036("TaskFlow System<br/><small>README.md</small>")
+    readme_zerovolumeorchestration_92f7008c("Zero-Volume Orchestration<br/><small>README.md</small>")
+    readme_servicediscovery_84e75a03("Service Discovery<br/><small>README.md</small>")
+    readme_observability_3cf55558("Observability<br/><small>README.md</small>")
+    readme_taskflow_05184036 -->|explains| readme_zerovolumeorchestration_92f7008c
+    readme_taskflow_05184036 -->|explains| readme_servicediscovery_84e75a03
+    readme_taskflow_05184036 -->|explains| readme_observability_3cf55558
+    class readme_taskflow_05184036 concept;
+    class readme_zerovolumeorchestration_92f7008c concept;
+    class readme_servicediscovery_84e75a03 concept;
+    class readme_observability_3cf55558 concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1241,43 +660,35 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>stress.js</code><br><small style="color:var(--muted)">stress.js</small></td>
-  <td><span class="tag tag-class">Module</span></td>
+  <td><code>TaskFlow System</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>stress.js node in stress.js.</td>
+  <td>Documentation node describing TaskFlow System.</td>
 </tr>
 <tr>
   <td>2</td>
-  <td><code>http</code><br><small style="color:var(--muted)">stress.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>Zero-Volume Orchestration</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>http node in stress.js.</td>
+  <td>Design note for Zero-Volume Orchestration.</td>
 </tr>
 <tr>
   <td>3</td>
-  <td><code>readline</code><br><small style="color:var(--muted)">stress.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>Service Discovery</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>readline node in stress.js.</td>
+  <td>Design note for Service Discovery.</td>
 </tr>
 <tr>
   <td>4</td>
-  <td><code>rl</code><br><small style="color:var(--muted)">stress.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td><code>Observability</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>rl node in stress.js.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>promptUser()</code><br><small style="color:var(--muted)">stress.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Builds structured prompts for model calls.</td>
+  <td>Design note for Observability.</td>
 </tr>
 </table>
 
@@ -1286,104 +697,25 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>stress.js</code></td><td>5 nodes</td></tr>
+      <tr><td><code>README.md</code></td><td>4 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x4. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: explains x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 9. Worker Post Task ====== -->
-<h2 id="worker-post-task">9. Worker Post Task</h2>
-<p>Worker Post Task groups implementation around worker, post, task, backend, mostly in backend/server.js, worker/worker.js, frontend/index.html. This section covers 3 nodes and 2 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 7. Monitoring Stack ====== -->
+<h2 id="monitoring-stack">7. Monitoring Stack</h2>
+<p>Monitoring Stack groups implementation around grafana, service, docker, composeyml, mostly in docker-compose.yml, monitoring/grafana-datasource.yml. This section covers 3 nodes and 2 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Worker Post Task (3 nodes, 2 edges)
-    server_post_task_ea66bbc7("POST /task<br/><small>backend/server.js</small>")
-    index_addtask_fb95e001("addTask<br/><small>frontend/index.html</small>")
-    worker_run_00618ed8("Worker Process Loop<br/><small>worker/worker.js</small>")
-    server_post_task_ea66bbc7 -->|calls| index_addtask_fb95e001
-    class server_post_task_ea66bbc7 klass;
-    class index_addtask_fb95e001 function;
-    class worker_run_00618ed8 klass;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>POST /task</code><br><small style="color:var(--muted)">backend/server.js</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>addTask</code><br><small style="color:var(--muted)">frontend/index.html</small></td>
-  <td>POST /task node in backend/server.js.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>Worker Process Loop</code><br><small style="color:var(--muted)">worker/worker.js</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Worker Process Loop node in worker/worker.js.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>addTask</code><br><small style="color:var(--muted)">frontend/index.html</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>POST /task</code><br><small style="color:var(--muted)">backend/server.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>addTask node in frontend/index.html.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>backend/server.js</code></td><td>1 nodes</td></tr>
-<tr><td><code>frontend/index.html</code></td><td>1 nodes</td></tr>
-<tr><td><code>worker/worker.js</code></td><td>1 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: calls x1, shares data with x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 10. Grafana Service Docker ====== -->
-<h2 id="grafana-service-docker">10. Grafana Service Docker</h2>
-<p>Grafana Service Docker groups implementation around grafana, service, docker, composeyml, mostly in docker-compose.yml, monitoring/grafana-datasource.yml. This section covers 3 nodes and 2 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Grafana Service Docker (3 nodes, 2 edges)
-    subgraph grafana_service_docker_docker_compose_yml_df301f38["docker-compose.yml"]
+    %% Section: Monitoring Stack (3 nodes, 2 edges)
+    subgraph monitoring_stack_docker_compose_yml_34a1edc3["docker-compose.yml"]
         dockercompose_prometheus_2946d9e6("Prometheus Service<br/><small>docker-compose.yml</small>")
         dockercompose_grafana_b3f331d1("Grafana Service<br/><small>docker-compose.yml</small>")
     end
@@ -1455,14 +787,14 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 11. Get Metrics Backend ====== -->
-<h2 id="get-metrics-backend">11. Get Metrics Backend</h2>
-<p>Get Metrics Backend groups implementation around get, metrics, backend, serverjs, mostly in backend/server.js, monitoring/prometheus.yml. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 8. Prometheus Metrics ====== -->
+<h2 id="prometheus-metrics">8. Prometheus Metrics</h2>
+<p>Prometheus Metrics groups implementation around get, metrics, backend, serverjs, mostly in backend/server.js, monitoring/prometheus.yml. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Get Metrics Backend (2 nodes, 1 edges)
+    %% Section: Prometheus Metrics (2 nodes, 1 edges)
     server_get_metrics_74b29c56("GET /metrics<br/><small>backend/server.js</small>")
     prometheus_config_61a25a30("Prometheus Config<br/><small>monitoring/prometheus.yml</small>")
     server_get_metrics_74b29c56 -->|calls| prometheus_config_61a25a30
@@ -1523,16 +855,16 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 12. Featmd Docs ====== -->
-<h2 id="featmd-docs">12. Featmd Docs</h2>
-<p>Featmd Docs groups implementation around featmd, docs, mostly in docs/feat.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 9. Grafana Dashboards ====== -->
+<h2 id="grafana-dashboards">9. Grafana Dashboards</h2>
+<p>Grafana Dashboards groups implementation around visualizer, grafana, readmemd, mostly in README.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Featmd Docs (1 nodes, 0 edges)
-    docs_feat_md_ca5fcbdc("feat.md")
-    class docs_feat_md_ca5fcbdc concept;
+    %% Section: Grafana Dashboards (1 nodes, 0 edges)
+    readme_grafana_9d7db018("Visualizer (Grafana)<br/><small>README.md</small>")
+    class readme_grafana_9d7db018 concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1556,11 +888,11 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>feat.md</code><br><small style="color:var(--muted)">docs/feat.md</small></td>
+  <td><code>Visualizer (Grafana)</code><br><small style="color:var(--muted)">README.md</small></td>
   <td><span class="tag tag-func">Concept</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>Documentation node describing feat.md.</td>
+  <td>Documentation node describing Visualizer (Grafana).</td>
 </tr>
 </table>
 
@@ -1569,7 +901,7 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>docs/feat.md</code></td><td>1 nodes</td></tr>
+      <tr><td><code>README.md</code></td><td>1 nodes</td></tr>
     </table>
   </div>
   <div class="card">
@@ -1579,14 +911,14 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 13. Horizontal Pod Autoscaling ====== -->
-<h2 id="horizontal-pod-autoscaling">13. Horizontal Pod Autoscaling</h2>
-<p>Horizontal Pod Autoscaling groups implementation around horizontal, pod, autoscaling, docs, mostly in docs/feat.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 10. Autoscaling Features ====== -->
+<h2 id="autoscaling-features">10. Autoscaling Features</h2>
+<p>Autoscaling Features groups implementation around horizontal, pod, autoscaling, docs, mostly in docs/feat.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Horizontal Pod Autoscaling (1 nodes, 0 edges)
+    %% Section: Autoscaling Features (1 nodes, 0 edges)
     feat_horizontal_pod_autoscaling_4ab5c2ec("Horizontal Pod Autoscaling<br/><small>docs/feat.md</small>")
     class feat_horizontal_pod_autoscaling_4ab5c2ec concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
@@ -1635,14 +967,14 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 14. Sqlite Database Docs ====== -->
-<h2 id="sqlite-database-docs">14. Sqlite Database Docs</h2>
-<p>Sqlite Database Docs groups implementation around sqlite, database, docs, prdmd, mostly in docs/prd.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 11. Database System ====== -->
+<h2 id="database-system">11. Database System</h2>
+<p>Database System groups implementation around sqlite, database, docs, prdmd, mostly in docs/prd.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Sqlite Database Docs (1 nodes, 0 edges)
+    %% Section: Database System (1 nodes, 0 edges)
     prd_sqlite_04212325("SQLite Database<br/><small>docs/prd.md</small>")
     class prd_sqlite_04212325 concept;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
@@ -1691,17 +1023,75 @@ flowchart LR
 </div>
 <hr>
 
+<!-- ====== 12. Frontend UI ====== -->
+<h2 id="frontend-ui">12. Frontend UI</h2>
+<p>Frontend UI groups implementation around frontend, service, readmemd, mostly in README.md. This section covers 1 nodes and 0 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Frontend UI (1 nodes, 0 edges)
+    readme_frontend_a75e0159("Frontend Service<br/><small>README.md</small>")
+    class readme_frontend_a75e0159 concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>Frontend Service</code><br><small style="color:var(--muted)">README.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing Frontend Service.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>README.md</code></td><td>1 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: No high-confidence call edges detected. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
 <h2 id="hyperedges">Group Relationships (Hyperedges)</h2>
 <div class="grid">
 
   <div class="card">
-    <h4>TaskFlow Core System</h4>
-    <p><code>form</code> — 4 participants</p>
+    <h4>TaskFlow Architecture Components</h4>
+    <p><code>participate_in</code> — 6 participants</p>
     <ul>
-      <li><code>dockercompose_frontend</code></li>
-      <li><code>dockercompose_backend</code></li>
-      <li><code>dockercompose_worker</code></li>
-      <li><code>dockercompose_redis</code></li>
+      <li><code>readme_frontend</code></li>
+      <li><code>readme_backend</code></li>
+      <li><code>readme_worker</code></li>
+      <li><code>readme_redis</code></li>
+      <li><code>readme_prometheus</code></li>
+      <li>... and 1 more</li>
     </ul>
   </div>
 </div>
@@ -1712,18 +1102,18 @@ flowchart LR
   <div class="card">
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>Nodes</td><td>87</td></tr>
-      <tr><td>Edges</td><td>76</td></tr>
+      <tr><td>Nodes</td><td>39</td></tr>
+      <tr><td>Edges</td><td>34</td></tr>
       <tr><td>Hyperedges</td><td>1</td></tr>
-      <tr><td>Communities</td><td>14</td></tr>
-      <tr><td>Documented Sections</td><td>13</td></tr>
+      <tr><td>Communities</td><td>11</td></tr>
+      <tr><td>Documented Sections</td><td>11</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>70</td></tr>
-      <tr><td>INFERRED</td><td>6</td></tr>
+      <tr><td>EXTRACTED</td><td>22</td></tr>
+      <tr><td>INFERRED</td><td>12</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
   </div>
@@ -1731,7 +1121,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>ctmp — Architecture Documentation</p>
-  <p>Generated: 2026-05-16 18:35 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-05-22 13:59 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->

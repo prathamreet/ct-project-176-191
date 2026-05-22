@@ -1,1 +1,1 @@
-{"0": "Backend App Setup", "1": "System Architecture", "2": "Worker Processing", "3": "Task Processing Flow", "4": "Monitoring Config", "5": "Metrics Export", "6": "Kubernetes Features", "7": "Storage Docs"}
+{"0": "Backend Server Core", "1": "Task Workflow", "2": "Worker Core", "3": "Docker Compose Services", "4": "Observability Architecture", "5": "Monitoring Stack", "6": "Prometheus Metrics", "7": "Autoscaling Features", "8": "Database System", "9": "Frontend UI", "10": "Grafana Dashboards"}

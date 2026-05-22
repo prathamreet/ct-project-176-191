@@ -1,23 +1,19 @@
 {
-  "E:\\repo-dev\\ctmp\\stress.js": {
-    "mtime": 1778952670.7396739,
-    "hash": "30c2eb9a818310874507956a5e2857f2"
-  },
   "E:\\repo-dev\\ctmp\\backend\\server.js": {
-    "mtime": 1778956415.0631547,
-    "hash": "e2a6e0f59f6535308b2c0d4b30d3c6e0"
+    "mtime": 1779456119.818868,
+    "hash": "50fa124ba9c55438babdaae3ad966199"
   },
   "E:\\repo-dev\\ctmp\\worker\\worker.js": {
-    "mtime": 1778956413.054417,
-    "hash": "afe87b76bb620d0a420d4b8e45ae4968"
+    "mtime": 1779456119.818868,
+    "hash": "db9b685057a9538959a2a85ee86981c0"
   },
   "E:\\repo-dev\\ctmp\\docker-compose.yml": {
     "mtime": 1777826524.9505653,
     "hash": "e3462c48dfe8133d63faed29f3728321"
   },
   "E:\\repo-dev\\ctmp\\README.md": {
-    "mtime": 1778956334.5604892,
-    "hash": "5aafe0fdc8fa0ae3c63ab8c689ffc035"
+    "mtime": 1779456119.818868,
+    "hash": "23f25b91d2eabb2cbc87e775fd218fb4"
   },
   "E:\\repo-dev\\ctmp\\docs\\feat.md": {
     "mtime": 1778940025.942563,
@@ -30,26 +26,6 @@
   "E:\\repo-dev\\ctmp\\frontend\\index.html": {
     "mtime": 1777995244.2416863,
     "hash": "9d459b5ad38a2b6270235d1c660e6ce6"
-  },
-  "E:\\repo-dev\\ctmp\\k8s\\backend.yaml": {
-    "mtime": 1778956428.1862981,
-    "hash": "badea0f527d4e32f361acb23ed78f18b"
-  },
-  "E:\\repo-dev\\ctmp\\k8s\\frontend.yaml": {
-    "mtime": 1778956450.7833724,
-    "hash": "0e58980477e039ba56ebd68a24e97b1d"
-  },
-  "E:\\repo-dev\\ctmp\\k8s\\monitoring.yaml": {
-    "mtime": 1778953170.2635279,
-    "hash": "597ccc00b8c27a2d6639f96acb9611b2"
-  },
-  "E:\\repo-dev\\ctmp\\k8s\\redis.yaml": {
-    "mtime": 1778940554.0875611,
-    "hash": "a9c5381a9f42d9df138d54c504890fdc"
-  },
-  "E:\\repo-dev\\ctmp\\k8s\\worker.yaml": {
-    "mtime": 1778956426.1617799,
-    "hash": "8b4dadc07032e86a21a2c0a6760ed6e1"
   },
   "E:\\repo-dev\\ctmp\\monitoring\\grafana-datasource.yml": {
     "mtime": 1777819996.9187188,
