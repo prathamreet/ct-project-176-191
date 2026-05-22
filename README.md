@@ -40,9 +40,9 @@ docker-compose down
 ### Kubernetes - Quick Start
 
 ```bash
-./run-k8s.sh        
-node stress.js      
-./stop-k8s.sh    
+./scripts/run-k8s.sh        
+node scripts/stress.js      
+./scripts/stop-k8s.sh    
 ```
 
 | Interface   | URL                   |
