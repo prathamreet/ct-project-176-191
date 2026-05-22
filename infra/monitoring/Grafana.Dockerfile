@@ -1,2 +1,2 @@
 FROM grafana/grafana
-COPY ./monitoring/grafana-datasource.yml /etc/grafana/provisioning/datasources/datasource.yml
+COPY ./infra/monitoring/grafana-datasource.yml /etc/grafana/provisioning/datasources/datasource.yml

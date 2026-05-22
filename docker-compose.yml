@@ -6,9 +6,9 @@ services:
     ports:
       - "8080:80"
     depends_on:
-      - backend
+      - backend-service
 
-  backend:
+  backend-service:
     build: ./services/backend
     environment:
       - REDIS_URL=redis://redis:6379
