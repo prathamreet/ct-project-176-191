@@ -23,76 +23,445 @@
   },
   "nodes": [
     {
+      "label": "stress.js",
+      "file_type": "code",
+      "source_file": "scripts/stress.js",
+      "source_location": "L1",
+      "id": "scripts_stress_js",
+      "community": 6,
+      "norm_label": "stress.js"
+    },
+    {
+      "label": "http",
+      "file_type": "code",
+      "source_file": "scripts/stress.js",
+      "source_location": "L1",
+      "id": "scripts_stress_http",
+      "community": 6,
+      "norm_label": "http"
+    },
+    {
+      "label": "readline",
+      "file_type": "code",
+      "source_file": "scripts/stress.js",
+      "source_location": "L2",
+      "id": "scripts_stress_readline",
+      "community": 6,
+      "norm_label": "readline"
+    },
+    {
+      "label": "rl",
+      "file_type": "code",
+      "source_file": "scripts/stress.js",
+      "source_location": "L6",
+      "id": "scripts_stress_rl",
+      "community": 6,
+      "norm_label": "rl"
+    },
+    {
+      "label": "promptUser()",
+      "file_type": "code",
+      "source_file": "scripts/stress.js",
+      "source_location": "L13",
+      "id": "scripts_stress_promptuser",
+      "community": 6,
+      "norm_label": "promptuser()"
+    },
+    {
       "label": "server.js",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L1",
-      "community": 0,
-      "norm_label": "server.js",
-      "id": "backend_server_js"
+      "id": "services_backend_server_js",
+      "community": 1,
+      "norm_label": "server.js"
     },
     {
       "label": "express",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L1",
-      "community": 0,
-      "norm_label": "express",
-      "id": "backend_server_express"
+      "id": "backend_server_express",
+      "community": 1,
+      "norm_label": "express"
     },
     {
       "label": "redis",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L2",
-      "community": 0,
-      "norm_label": "redis",
-      "id": "backend_server_redis"
+      "id": "backend_server_redis",
+      "community": 1,
+      "norm_label": "redis"
     },
     {
       "label": "cors",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L3",
-      "community": 0,
-      "norm_label": "cors",
-      "id": "backend_server_cors"
+      "id": "backend_server_cors",
+      "community": 1,
+      "norm_label": "cors"
     },
     {
       "label": "app",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L5",
-      "community": 0,
-      "norm_label": "app",
-      "id": "backend_server_app"
+      "id": "backend_server_app",
+      "community": 1,
+      "norm_label": "app"
     },
     {
       "label": "client",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L9",
-      "community": 0,
-      "norm_label": "client",
-      "id": "backend_server_client"
+      "id": "backend_server_client",
+      "community": 1,
+      "norm_label": "client"
     },
     {
       "label": "id",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L13",
-      "community": 0,
-      "norm_label": "id",
-      "id": "backend_server_id"
+      "id": "backend_server_id",
+      "community": 1,
+      "norm_label": "id"
     },
     {
       "label": "tasks",
       "file_type": "code",
-      "source_file": "backend/server.js",
+      "source_file": "services/backend/server.js",
       "source_location": "L28",
+      "id": "backend_server_tasks",
+      "community": 1,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "cpu",
+      "file_type": "code",
+      "source_file": "services/backend/server.js",
+      "source_location": "L63",
+      "id": "backend_server_cpu",
+      "community": 1,
+      "norm_label": "cpu"
+    },
+    {
+      "label": "worker.js",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L1",
+      "id": "services_worker_worker_js",
+      "community": 2,
+      "norm_label": "worker.js"
+    },
+    {
+      "label": "redis",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L1",
+      "id": "worker_worker_redis",
+      "community": 2,
+      "norm_label": "redis"
+    },
+    {
+      "label": "express",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L2",
+      "id": "worker_worker_express",
+      "community": 2,
+      "norm_label": "express"
+    },
+    {
+      "label": "app",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L4",
+      "id": "worker_worker_app",
+      "community": 2,
+      "norm_label": "app"
+    },
+    {
+      "label": "client",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L5",
+      "id": "worker_worker_client",
+      "community": 2,
+      "norm_label": "client"
+    },
+    {
+      "label": "processTasks()",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L10",
+      "id": "worker_worker_processtasks",
+      "community": 2,
+      "norm_label": "processtasks()"
+    },
+    {
+      "label": "cpu",
+      "file_type": "code",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L30",
+      "id": "worker_worker_cpu",
+      "community": 2,
+      "norm_label": "cpu"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_md",
+      "community": 3,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "TaskFlow - Scalable Job Processing Engine",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L8",
+      "id": "ctmp_readme_taskflow_scalable_job_processing_engine",
+      "community": 3,
+      "norm_label": "taskflow - scalable job processing engine"
+    },
+    {
+      "label": "Stack",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "id": "ctmp_readme_stack",
+      "community": 3,
+      "norm_label": "stack"
+    },
+    {
+      "label": "Docker - Quick Start",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L31",
+      "id": "ctmp_readme_docker_quick_start",
+      "community": 3,
+      "norm_label": "docker - quick start"
+    },
+    {
+      "label": "code:bash (docker-compose up --build -d)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "id": "ctmp_readme_codeblock_1",
+      "community": 3,
+      "norm_label": "code:bash (docker-compose up --build -d)"
+    },
+    {
+      "label": "Kubernetes - Quick Start",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L40",
+      "id": "ctmp_readme_kubernetes_quick_start",
+      "community": 3,
+      "norm_label": "kubernetes - quick start"
+    },
+    {
+      "label": "code:bash (./scripts/run-k8s.sh)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L42",
+      "id": "ctmp_readme_codeblock_2",
+      "community": 3,
+      "norm_label": "code:bash (./scripts/run-k8s.sh)"
+    },
+    {
+      "label": "kubectl Reference",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L56",
+      "id": "ctmp_readme_kubectl_reference",
+      "community": 3,
+      "norm_label": "kubectl reference"
+    },
+    {
+      "label": "code:bash (# Pods)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L58",
+      "id": "ctmp_readme_codeblock_3",
+      "community": 3,
+      "norm_label": "code:bash (# pods)"
+    },
+    {
+      "label": "feat.md",
+      "file_type": "document",
+      "source_file": "docs/feat.md",
+      "source_location": "L1",
+      "id": "docs_feat_md",
+      "community": 9,
+      "norm_label": "feat.md"
+    },
+    {
+      "label": "prd.md",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L1",
+      "id": "docs_prd_md",
       "community": 0,
-      "norm_label": "tasks",
-      "id": "backend_server_tasks"
+      "norm_label": "prd.md"
+    },
+    {
+      "label": "PRD \u2014 TaskFlow (Dockerized Task Queue System)",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L5",
+      "id": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "community": 0,
+      "norm_label": "prd \u2014 taskflow (dockerized task queue system)"
+    },
+    {
+      "label": "1. Overview",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L7",
+      "id": "docs_prd_1_overview",
+      "community": 0,
+      "norm_label": "1. overview"
+    },
+    {
+      "label": "2. Objectives",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L11",
+      "id": "docs_prd_2_objectives",
+      "community": 0,
+      "norm_label": "2. objectives"
+    },
+    {
+      "label": "3. Scope",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L19",
+      "id": "docs_prd_3_scope",
+      "community": 0,
+      "norm_label": "3. scope"
+    },
+    {
+      "label": "4. System Architecture",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L37",
+      "id": "docs_prd_4_system_architecture",
+      "community": 0,
+      "norm_label": "4. system architecture"
+    },
+    {
+      "label": "5. Functional Requirements",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L56",
+      "id": "docs_prd_5_functional_requirements",
+      "community": 0,
+      "norm_label": "5. functional requirements"
+    },
+    {
+      "label": "6. Non-Functional Requirements",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L75",
+      "id": "docs_prd_6_non_functional_requirements",
+      "community": 0,
+      "norm_label": "6. non-functional requirements"
+    },
+    {
+      "label": "7. Container Design",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L83",
+      "id": "docs_prd_7_container_design",
+      "community": 0,
+      "norm_label": "7. container design"
+    },
+    {
+      "label": "8. API Design (Minimal)",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L101",
+      "id": "docs_prd_8_api_design_minimal",
+      "community": 0,
+      "norm_label": "8. api design (minimal)"
+    },
+    {
+      "label": "9. Data Model (SQLite)",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L106",
+      "id": "docs_prd_9_data_model_sqlite",
+      "community": 0,
+      "norm_label": "9. data model (sqlite)"
+    },
+    {
+      "label": "10. CI/CD",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L115",
+      "id": "docs_prd_10_ci_cd",
+      "community": 0,
+      "norm_label": "10. ci/cd"
+    },
+    {
+      "label": "11. Monitoring",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L125",
+      "id": "docs_prd_11_monitoring",
+      "community": 0,
+      "norm_label": "11. monitoring"
+    },
+    {
+      "label": "12. Success Criteria",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L135",
+      "id": "docs_prd_12_success_criteria",
+      "community": 0,
+      "norm_label": "12. success criteria"
+    },
+    {
+      "label": "13. Timeline (Suggested)",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L143",
+      "id": "docs_prd_13_timeline_suggested",
+      "community": 0,
+      "norm_label": "13. timeline (suggested)"
+    },
+    {
+      "label": "14. Risks",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L151",
+      "id": "docs_prd_14_risks",
+      "community": 0,
+      "norm_label": "14. risks"
+    },
+    {
+      "label": "15. Deliverables",
+      "file_type": "document",
+      "source_file": "docs/prd.md",
+      "source_location": "L157",
+      "id": "docs_prd_15_deliverables",
+      "community": 0,
+      "norm_label": "15. deliverables"
+    },
+    {
+      "label": "server.js",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "server.js",
+      "id": "backend_server_js"
     },
     {
       "label": "worker.js",
@@ -102,24 +471,6 @@
       "community": 2,
       "norm_label": "worker.js",
       "id": "worker_worker_js"
-    },
-    {
-      "label": "redis",
-      "file_type": "code",
-      "source_file": "worker.js",
-      "source_location": "L1",
-      "community": 2,
-      "norm_label": "redis",
-      "id": "worker_worker_redis"
-    },
-    {
-      "label": "client",
-      "file_type": "code",
-      "source_file": "worker.js",
-      "source_location": "L3",
-      "community": 2,
-      "norm_label": "client",
-      "id": "worker_worker_client"
     },
     {
       "label": "run()",
@@ -134,7 +485,7 @@
       "label": "POST /task",
       "file_type": "code",
       "source_file": "backend/server.js",
-      "community": 1,
+      "community": 5,
       "norm_label": "post /task",
       "id": "server_post_task"
     },
@@ -142,7 +493,7 @@
       "label": "GET /metrics",
       "file_type": "code",
       "source_file": "backend/server.js",
-      "community": 6,
+      "community": 8,
       "norm_label": "get /metrics",
       "id": "server_get_metrics"
     },
@@ -150,7 +501,7 @@
       "label": "run",
       "file_type": "code",
       "source_file": "worker/worker.js",
-      "community": 1,
+      "community": 5,
       "norm_label": "run",
       "source_location": null,
       "source_url": null,
@@ -163,7 +514,7 @@
       "label": "addTask",
       "file_type": "code",
       "source_file": "frontend/index.html",
-      "community": 1,
+      "community": 5,
       "norm_label": "addtask",
       "id": "index_addtask"
     },
@@ -171,7 +522,7 @@
       "label": "Redis Service",
       "file_type": "document",
       "source_file": "docker-compose.yml",
-      "community": 3,
+      "community": 4,
       "norm_label": "redis service",
       "id": "dockercompose_redis"
     },
@@ -179,7 +530,7 @@
       "label": "Backend Service",
       "file_type": "document",
       "source_file": "docker-compose.yml",
-      "community": 3,
+      "community": 4,
       "norm_label": "backend service",
       "id": "dockercompose_backend"
     },
@@ -187,7 +538,7 @@
       "label": "Worker Service",
       "file_type": "document",
       "source_file": "docker-compose.yml",
-      "community": 3,
+      "community": 4,
       "norm_label": "worker service",
       "id": "dockercompose_worker"
     },
@@ -195,7 +546,7 @@
       "label": "Frontend Service",
       "file_type": "document",
       "source_file": "docker-compose.yml",
-      "community": 3,
+      "community": 4,
       "norm_label": "frontend service",
       "id": "dockercompose_frontend"
     },
@@ -203,7 +554,7 @@
       "label": "Prometheus Service",
       "file_type": "document",
       "source_file": "docker-compose.yml",
-      "community": 5,
+      "community": 7,
       "norm_label": "prometheus service",
       "id": "dockercompose_prometheus"
     },
@@ -211,7 +562,7 @@
       "label": "Grafana Service",
       "file_type": "document",
       "source_file": "docker-compose.yml",
-      "community": 5,
+      "community": 7,
       "norm_label": "grafana service",
       "id": "dockercompose_grafana"
     },
@@ -232,7 +583,7 @@
       "label": "Kubernetes Transition",
       "file_type": "document",
       "source_file": "docs/feat.md",
-      "community": 3,
+      "community": 4,
       "norm_label": "kubernetes transition",
       "id": "feat_kubernetes_transition"
     },
@@ -240,7 +591,7 @@
       "label": "Horizontal Pod Autoscaling",
       "file_type": "document",
       "source_file": "docs/feat.md",
-      "community": 7,
+      "community": 10,
       "norm_label": "horizontal pod autoscaling",
       "id": "feat_horizontal_pod_autoscaling"
     },
@@ -248,7 +599,7 @@
       "label": "SQLite Database",
       "file_type": "document",
       "source_file": "docs/prd.md",
-      "community": 8,
+      "community": 11,
       "norm_label": "sqlite database",
       "id": "prd_sqlite"
     },
@@ -256,7 +607,7 @@
       "label": "Prometheus Config",
       "file_type": "document",
       "source_file": "monitoring/prometheus.yml",
-      "community": 6,
+      "community": 8,
       "norm_label": "prometheus config",
       "id": "prometheus_config"
     },
@@ -264,7 +615,7 @@
       "label": "Grafana Datasource",
       "file_type": "document",
       "source_file": "monitoring/grafana-datasource.yml",
-      "community": 5,
+      "community": 7,
       "norm_label": "grafana datasource",
       "id": "grafana_datasource"
     },
@@ -273,9 +624,9 @@
       "file_type": "code",
       "source_file": "worker.js",
       "source_location": "L1",
-      "id": "worker_js",
       "community": 2,
-      "norm_label": "worker.js"
+      "norm_label": "worker.js",
+      "id": "worker_js"
     },
     {
       "label": "Frontend Service",
@@ -286,9 +637,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_frontend",
-      "community": 9,
-      "norm_label": "frontend service"
+      "community": 12,
+      "norm_label": "frontend service",
+      "id": "readme_frontend"
     },
     {
       "label": "Backend Service",
@@ -299,9 +650,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_backend",
-      "community": 1,
-      "norm_label": "backend service"
+      "community": 5,
+      "norm_label": "backend service",
+      "id": "readme_backend"
     },
     {
       "label": "Worker Service",
@@ -312,9 +663,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_worker",
-      "community": 1,
-      "norm_label": "worker service"
+      "community": 5,
+      "norm_label": "worker service",
+      "id": "readme_worker"
     },
     {
       "label": "Queue/DB (Redis)",
@@ -325,9 +676,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_redis",
-      "community": 1,
-      "norm_label": "queue/db (redis)"
+      "community": 5,
+      "norm_label": "queue/db (redis)",
+      "id": "readme_redis"
     },
     {
       "label": "Metrics (Prometheus)",
@@ -338,9 +689,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_prometheus",
-      "community": 1,
-      "norm_label": "metrics (prometheus)"
+      "community": 5,
+      "norm_label": "metrics (prometheus)",
+      "id": "readme_prometheus"
     },
     {
       "label": "Visualizer (Grafana)",
@@ -351,9 +702,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_grafana",
-      "community": 10,
-      "norm_label": "visualizer (grafana)"
+      "community": 13,
+      "norm_label": "visualizer (grafana)",
+      "id": "readme_grafana"
     },
     {
       "label": "Zero-Volume Orchestration",
@@ -364,9 +715,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_zerovolumeorchestration",
       "community": 4,
-      "norm_label": "zero-volume orchestration"
+      "norm_label": "zero-volume orchestration",
+      "id": "readme_zerovolumeorchestration"
     },
     {
       "label": "Asynchronous Pattern",
@@ -377,9 +728,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_asynchronouspattern",
-      "community": 1,
-      "norm_label": "asynchronous pattern"
+      "community": 5,
+      "norm_label": "asynchronous pattern",
+      "id": "readme_asynchronouspattern"
     },
     {
       "label": "Service Discovery",
@@ -390,9 +741,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_servicediscovery",
       "community": 4,
-      "norm_label": "service discovery"
+      "norm_label": "service discovery",
+      "id": "readme_servicediscovery"
     },
     {
       "label": "Observability",
@@ -403,12 +754,132 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_observability",
       "community": 4,
-      "norm_label": "observability"
+      "norm_label": "observability",
+      "id": "readme_observability"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/stress.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scripts_stress_js",
+      "target": "scripts_stress_http",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/stress.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "scripts_stress_js",
+      "target": "scripts_stress_readline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/stress.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scripts_stress_js",
+      "target": "scripts_stress_rl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/stress.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "scripts_stress_js",
+      "target": "scripts_stress_promptuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_express",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_redis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_cors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/backend/server.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "services_backend_server_js",
+      "target": "backend_server_cpu",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -482,6 +953,66 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_worker_worker_js",
+      "target": "worker_worker_redis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "services_worker_worker_js",
+      "target": "worker_worker_express",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "services_worker_worker_js",
+      "target": "worker_worker_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "services_worker_worker_js",
+      "target": "worker_worker_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "services_worker_worker_js",
+      "target": "worker_worker_processtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/worker/worker.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "services_worker_worker_js",
+      "target": "worker_worker_cpu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "worker/worker.js",
       "source_location": "L1",
       "weight": 1.0,
@@ -492,12 +1023,272 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "worker.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "worker_worker_redis",
+      "target": "worker_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "worker/worker.js",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "worker_worker_js",
       "target": "worker_worker_client"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "worker_worker_client",
+      "target": "worker_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "ctmp_readme_taskflow_scalable_job_processing_engine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "ctmp_readme_taskflow_scalable_job_processing_engine",
+      "target": "ctmp_readme_stack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "ctmp_readme_taskflow_scalable_job_processing_engine",
+      "target": "ctmp_readme_docker_quick_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "ctmp_readme_taskflow_scalable_job_processing_engine",
+      "target": "ctmp_readme_kubernetes_quick_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "ctmp_readme_taskflow_scalable_job_processing_engine",
+      "target": "ctmp_readme_kubectl_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "ctmp_readme_docker_quick_start",
+      "target": "ctmp_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "ctmp_readme_kubernetes_quick_start",
+      "target": "ctmp_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "ctmp_readme_kubectl_reference",
+      "target": "ctmp_readme_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "docs_prd_md",
+      "target": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_1_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_2_objectives",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_3_scope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_4_system_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_5_functional_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_6_non_functional_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_7_container_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_8_api_design_minimal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_9_data_model_sqlite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_10_ci_cd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_11_monitoring",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_12_success_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_13_timeline_suggested",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_14_risks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/prd.md",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "docs_prd_prd_taskflow_dockerized_task_queue_system",
+      "target": "docs_prd_15_deliverables",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -513,31 +1304,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "worker.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "worker_worker_redis",
-      "target": "worker_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "worker.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "worker_worker_client",
-      "target": "worker_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "worker.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "worker_worker_run",
-      "target": "worker_js",
-      "confidence_score": 1.0
+      "target": "worker_js"
     },
     {
       "relation": "calls",
@@ -738,5 +1509,5 @@
       "source_file": "README.md"
     }
   ],
-  "built_at_commit": "ff92311a1349a950f74644d1551ab98b44fae49b"
+  "built_at_commit": "9d0529ddd95ce592f77fa5db0e59078e70ee3974"
 }
