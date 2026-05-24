@@ -164,3 +164,9 @@ kubectl get pvc
 kubectl logs -l app=backend --tail=100
 ```
 <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=10&section=header" width="1080" align="center"/>
+
+
+*   **Interactive Code Dependency Graph:** [TaskFlow System Dependency Graph](https://exquisite-marzipan-5c18ba.netlify.app/graph.html)
+*   **Interactive Codebase Call-Flow Map:** [TaskFlow Dynamic Call-Flow Diagrams](https://exquisite-marzipan-5c18ba.netlify.app/ctmp-callflow.html)
+
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=10&section=header" width="1080" align="center"/>
